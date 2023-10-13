@@ -1,0 +1,69 @@
+<div class="logo"><i class="fa-solid fa-brain fa-5x"></i></div>
+        <ul class="menu">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="publications.html" >Publications</a></li>
+            <li><a href="projects.html" >Projects</a></li>
+            <li><a href="ressources.html" >Ressources</a></li>
+            <li><a href="cv.html" >CV</a></li>
+        </ul>
+        <style>
+        .logo {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom:20px;
+}
+
+ .nav {
+    flex: 1;
+    /* display: flex; */
+    justify-content: flex-end;
+    margin: 50px 0px;
+}
+
+.nav ul li, .nav ul li a {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav ul li a {
+    padding: 8px 0px;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.4);
+    letter-spacing: 1px;
+    font-weight: 500;
+    position: relative;
+}
+
+.nav ul li a:hover {
+    color: #000;
+}
+.nav ul li a:after {
+    content: "";
+    width: 0;
+    height: 1px;
+    background: #000;
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    right: 0;
+    -webkit-transform: scaleX(0);
+    -moz-transform: scaleX(0);
+    -ms-transform: scaleX(0);
+    -o-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -moz-transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -ms-transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -o-transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.nav ul li a:hover:after {
+    width: 100%;
+    -webkit-transform: scaleX(1);
+    -moz-transform: scaleX(1);
+    -ms-transform: scaleX(1);
+    -o-transform: scaleX(1);
+    transform: scaleX(1);
+}
+        </style>
