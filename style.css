@@ -20,6 +20,7 @@ Base CSS
   padding: 0;
   box-sizing: border-box;
 }
+
 h1,
 h2,
 h3,
@@ -27,10 +28,11 @@ h4,
 h5,
 h6 {
 
-
 }
+
 html {
   height: 100%;
+
 }
 body {
   height: 100%;
