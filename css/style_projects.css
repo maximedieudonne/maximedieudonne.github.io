@@ -31,7 +31,7 @@ h1{
   /*width: 80%;*/
 }
 
-.item {
+.itemp {
   position: relative;
   float: left;
   overflow: hidden;
@@ -44,11 +44,11 @@ h1{
   box-sizing: border-box;
 }
 
-.item:hover{
+.itemp:hover{
   cursor: pointer;
 }
 
-.item *{
+.itemp *{
   transition: all 0.35s ease-in-out;
 }
 
@@ -59,7 +59,7 @@ img {
 
 }
 
-.item:hover img {
+.itemp:hover img {
   opacity: 0;
 }
 
@@ -76,15 +76,15 @@ img {
   color: black;
 }
 
-.item:hover .text{
+.itemp:hover .text{
   top: 20%;
 }
 
-.item:hover .button{
+.itemp:hover .button{
   bottom: 20%;
 }
 
-.item .button{
+.itemp .button{
   position: absolute;
   bottom: -100px;
   left: 25%;

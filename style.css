@@ -871,3 +871,19 @@ body {
 		font-size: 70%;
 	}
 }
+/**/
+
+.button{
+  position: absolute;
+  width: 10%;
+  border: 3px solid #01A2AC;
+  padding: 15px;
+  margin-top: 1em;
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+}
+
+.button:hover{
+  background-color: #01A2AC;
+  color: #F5F5F5;
+}
