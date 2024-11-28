@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/OBJLoader.js"></script>
+    <script src="https://kit.fontawesome.com/82b70b5047.js" crossorigin="anonymous"></script>
     <style>
         /* General Styling */
         body {
@@ -107,6 +108,72 @@
         .profile-section .button:hover {
             transform: scale(1.05);
             background: #ff6b81;
+        }
+        /* Ressources Section Styling */
+        .ressources-section {
+            text-align: center;
+            padding: 4em 2em;
+            background: linear-gradient(to bottom, #0f3460, #1a1a2e);
+            color: #fff;
+        }
+
+        .ressources-section h1 {
+            font-size: 3rem;
+            margin-bottom: 1em;
+            color: #e94560;
+        }
+
+        .ressources-section p {
+            font-size: 1.2rem;
+            margin-bottom: 3em;
+            line-height: 1.8;
+        }
+
+        .ressources-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .ressources-item {
+            text-decoration: none;
+            background: #16213e;
+            border-radius: 15px;
+            padding: 2em;
+            max-width: 400px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+            color: #fff;
+        }
+
+        .ressources-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .ressources-item .icon {
+            font-size: 4rem;
+            color: #e94560;
+            margin-bottom: 1em;
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        .ressources-item:hover .icon {
+            transform: scale(1.2) rotate(20deg);
+            color: #ff6b81;
+        }
+
+        .ressources-item h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5em;
+            color: #e94560;
+        }
+
+        .ressources-item p {
+            font-size: 1rem;
+            color: #d4d4d4;
+            line-height: 1.6;
         }
 
         /* Projects Section Styling */
@@ -244,6 +311,24 @@
         </section>
     </div>
 
+    <!-- Learn Neuro-Imaging Section -->
+    <section id="ressources" class="ressources-section">
+        <h1>Learn Neuro-Imaging</h1>
+        <p>Start learning Neuro-Imaging with comprehensive resources and guides:</p>
+        <div class="ressources-content">
+            <a href="ressources.html" class="ressources-item">
+                <div class="icon">
+                    <i class="fas fa-book"></i>
+                </div>
+                <h2>Explore Resources</h2>
+                <p>Access a curated library of tutorials, articles, and datasets to help you master neuro-imaging.</p>
+            </a>
+        </div>
+    </section>
+
+
+
+    
     <!-- Projects Section -->
     <section id="projects" class="projects-section">
         <h1>Projects</h1>
