@@ -1,68 +1,179 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://kit.fontawesome.com/82b70b5047.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.134/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.134/examples/js/controls/OrbitControls.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffffff; /* Fond blanc */
+            color: #000; /* Texte noir */
+        }
+        .wraper {
+            display: flex;
+            flex-direction: column;
+        }
+        .container {
+            display: flex;
+            flex-direction: row;
+        }
+        .left-content {
+            width: 25%;
+            padding: 30px;
+            background-color: #f4f4f4; /* Fond gris clair pour le panneau gauche */
+        }
+        .main-content {
+            width: 75%;
+            padding: 30px;
+        }
+        #model-container {
+            width: 100%;
+            height: 500px; /* Hauteur ajustée pour éviter l'aplatissement */
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #fff;
+        }
+        .social-icons ul,
+        .foot-contact ul {
+            list-style: none;
+            padding: 0;
+        }
+        .social-icons ul li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .social-icons ul li a {
+            color: #000;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
     <div class="wraper">
-		<div class="container">
-		<div class="left-content p-30">
+        <div class="container">
+            <div class="left-content p-30">
+                <nav class="nav"></nav>
+                <div class="left-footer">
+                    <div class="social-icons">
+                        <ul>
+                            <li><a href=""><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                            <li><a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="foot-contact">
+                        <ul>
+                            <li>maxime.dieudonne@univ-amu.fr</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="main-content">
+                <div class="section1 p-30" id="Home">
+                    <div class="sec-title">
+                        <div class="pg-sub-title">Home</div>
+                        <div class="pg-title">My Profile</div>
+                    </div>
+                    <div class="d-flex-align-center">
+                        <!-- Conteneur pour le modèle 3D -->
+                        <div id="model-container"></div>
+                        <div class="user-profile flex-1">
+                            <div class="pro-details">
+                                <div class="sm-text">HELLO EVERYBODY, I AM</div>
+                                <div class="name">Maxime Dieudonne</div>
+                                <div class="role">PhD Student in Neuro-Imaging</div>
+                            </div>
+                            <div class="text">
+                                My current research focuses on the morphometric analysis of the human cortex,
+                                in particular the development of algorithmic tools for the quantification of sulcal depth
+                            </div>
+                            <div class="button"><a href="projects.html">Discover my projects</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-			<nav class="nav"></nav>
-			<div class="left-footer">
-				<div class="social-icons">
-					<ul>
-						<li><a href=""><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
-						<li><a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-						<li><a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-						<li><a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-					</ul>
-				</div>
-				<div class="foot-contact">
-					<ul>
-						<li>maxime.dieudonne@univ-amu.fr</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div class="main-content">
-			<div class="section1 p-30" id="Publications">
-			<div class="sec-title">
-	<div class="pg-sub-title">Publications</div>
-			</div>
-				<div class="d-flex-align-center">
-					    <section>
+    <script>
+        // Configuration de Three.js
+        const scene = new THREE.Scene();
+        const container = document.getElementById('model-container');
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(container.clientWidth, container.clientHeight);
+        container.appendChild(renderer.domElement);
 
-    						<p>Les diverses algorithmes de mesure de la profondeur des sillons corticaux sont adaptées
-								et évaluées en fonction d'une application clinique ou méthodologique donnée.
-								Elles peuvent également être comparées entre elles afin de mettre en évidence les
-								différences de résultats, mais le choix d'une méthode plutôt que d'une autre demeure
-								une question ouverte. Nous avons cherché à formaliser une contrainte méthodologique
-								que toute méthode d'estimation de la profondeur sulcale devrait respecter, à savoir
-								être invariante à une mise à l'échelle lorsque la profondeur est exprimée relativement
-								à la taille. De plus, nous avons formulé trois critères quantitatifs en nous appuyant
-								sur des connaissances biologiques préalables que nous avons définies à partir de notre
-								synthèse bibliographique des articles méthodologiques et applicatifs de la profondeur
-								sulcale. Par la suite, nous avons utilisé cette contrainte méthodologique et ces critères
-								quantitatifs pour développer notre propre méthode d'estimation de la profondeur sulcale.
-							</p>
+        // Caméra ajustée avec un rapport d'aspect correspondant au conteneur
+        const camera = new THREE.PerspectiveCamera(
+            75,
+            container.clientWidth / container.clientHeight, // Ratio ajusté
+            0.1,
+            1000
+        );
 
-    					</section>
+        // Lumières
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5); // Lumière douce
+        scene.add(ambientLight);
 
-				</div>
-			</div>
-			</div>
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+        directionalLight.position.set(5, 5, 5);
+        scene.add(directionalLight);
 
-		</div>
-	</div>
-</div>
+        // Charger le modèle 3D
+        const loader = new THREE.GLTFLoader();
+        let model;
 
+        loader.load(
+            'brain_project.glb', // Chemin vers le fichier GLB
+            (gltf) => {
+                model = gltf.scene;
+                scene.add(model);
 
-    <script src="script.js"></script>
+                // Ajuster position et échelle
+                model.position.set(0, -0.5, 0);
+                model.scale.set(1.5, 1.5, 1.5);
+            },
+            (xhr) => {
+                console.log(`Chargement : ${(xhr.loaded / xhr.total) * 100}% terminé`);
+            },
+            (error) => {
+                console.error('Erreur lors du chargement du modèle', error);
+            }
+        );
+
+        // OrbitControls pour rotation
+        const controls = new THREE.OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true; // Mouvement fluide
+        controls.dampingFactor = 0.05;
+
+        // Position de la caméra
+        camera.position.set(0, 1, 3);
+
+        // Animation
+        function animate() {
+            requestAnimationFrame(animate);
+            controls.update(); // Met à jour les contrôles
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        // Gérer le redimensionnement de la fenêtre et du conteneur
+        window.addEventListener('resize', () => {
+            const width = container.clientWidth;
+            const height = container.clientHeight;
+
+            // Mettre à jour la taille du renderer et de la caméra
+            renderer.setSize(width, height);
+            camera.aspect = width / height;
+            camera.updateProjectionMatrix();
+        });
+    </script>
 </body>
 </html>
