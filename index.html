@@ -3,140 +3,399 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="https://kit.fontawesome.com/82b70b5047.js" crossorigin="anonymous"></script>
+    <title>Portfolio - Maxime Dieudonne</title>
+    <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/OBJLoader.js"></script>
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            background: linear-gradient(to bottom, #1a1a2e, #16213e);
+        }
+
+        /* Hero Section Styling */
+        .hero {
+            text-align: center;
+            padding: 5em 2em;
+            background: linear-gradient(to bottom, #1a1a2e, #16213e);
+            color: #fff;
+        }
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1em;
+        }
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2em;
+        }
+        .hero .button {
+            padding: 1em 2em;
+            font-size: 1.2rem;
+            background: #e94560;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(233, 69, 96, 0.5);
+            transition: transform 0.3s, background 0.3s;
+        }
+        .hero .button:hover {
+            transform: scale(1.1);
+            background: #ff6b81;
+        }
+
+        /* Layout for Mesh and Profile Section */
+        .profile-mesh-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 4em 2em;
+            gap: 2em;
+        }
+        .mesh-section, .profile-section {
+            flex: 1;
+        }
+        #3d-container {
+            width: 100%;
+            max-width: 500px;
+            height: 400px;
+            background: #1a1a2e;
+            border: 3px solid #e94560;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(233, 69, 96, 0.5);
+            margin-bottom: 2em;
+        }
+        .slider-container {
+            margin-top: 1.5em;
+            text-align: center;
+        }
+        .slider-container label {
+            display: block;
+            font-size: 1rem;
+            margin-bottom: 0.5em;
+        }
+        .slider-container input {
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .profile-section {
+            text-align: left;
+        }
+        .profile-section h1, .profile-section h2, .profile-section h3 {
+            margin-bottom: 0.5em;
+        }
+        .profile-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2em;
+            line-height: 1.8;
+        }
+        .profile-section .button {
+            margin: 1em 0;
+            padding: 0.8em 1.5em;
+            font-size: 1rem;
+            background: #e94560;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(233, 69, 96, 0.5);
+            transition: transform 0.3s, background 0.3s;
+        }
+        .profile-section .button:hover {
+            transform: scale(1.05);
+            background: #ff6b81;
+        }
+
+        /* Projects Section Styling */
+        .projects-section {
+            text-align: center;
+            padding: 4em 2em;
+            background: linear-gradient(to bottom, #0f3460, #1a1a2e);
+        }
+        .projects-section h1 {
+            font-size: 3rem;
+            margin-bottom: 1em;
+            color: #e94560;
+        }
+        .projects-section p {
+            font-size: 1.2rem;
+            margin-bottom: 3em;
+        }
+        .gallery-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .gallery-item {
+            flex: 1 1 calc(30% - 20px);
+            max-width: calc(30% - 20px);
+            background: #16213e;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        }
+        .gallery-item img {
+            width: 100%;
+            border-bottom: 3px solid #e94560;
+        }
+        .gallery-item h2 {
+            font-size: 1.5rem;
+            margin: 1em 0;
+            color: #e94560;
+        }
+        .gallery-item p {
+            font-size: 1rem;
+            margin: 0 1em 1.5em;
+            color: #d4d4d4;
+            line-height: 1.6;
+        }
+        .gallery-item .button {
+            margin: 1em auto 2em;
+            padding: 0.8em 1.5em;
+            background: #e94560;
+            color: #fff;
+            font-size: 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(233, 69, 96, 0.5);
+            transition: transform 0.3s, background 0.3s;
+        }
+        .gallery-item .button:hover {
+            background: #ff6b81;
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .profile-mesh-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .mesh-section, .profile-section {
+                width: 100%;
+                max-width: 500px;
+            }
+            .gallery-item {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Header Section -->
     <header class="header">
         <nav class="nav">
             <ul class="menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="publications.html">Publications</a></li>
-                <li><a href="projects.html">Projects</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="ressources.html">Resources</a></li>
+                <li><a href="publications.html">Publications</a></li>
                 <li><a href="cv.html">CV</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="main-content">
-        <div class="layout">
-            <!-- Section pour le maillage 3D -->
-            <section class="mesh-section">
-                <div id="3d-container"></div>
-            </section>
-            
-            <!-- Section pour le profil utilisateur -->
-            <section class="profile-section">
-                <h1>HELLO EVERYBODY, I AM</h1>
-                <h2>Maxime Dieudonne</h2>
-                <h3>PhD Student in Neuro-Imaging</h3>
-                <p>
-                    My current research focuses on the morphometric analysis of the human cortex,
-                    in particular the development of algorithmic tools for the quantification of sulcal depth.
-                </p>
-                <a href="projects.html" class="button">Discover my projects</a>
-            </section>
-        </div>
-    </main>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>Explore Neuro-Imaging</h1>
+        <p>What about the shape of your brain?</p>
+        <a href="#profile" class="button">Get Started</a>
+    </section>
 
-    <footer class="footer">
-        <div class="contact-info">
-            <p>Email: maxime.dieudonne@univ-amu.fr</p>
+    <!-- Mesh and Profile Section -->
+    <div class="profile-mesh-container">
+        <!-- Mesh Section -->
+        <section id="mesh" class="mesh-section">
+            <h2>Interactive 3D Brain Model</h2>
+            <p>Explore the structure of the human brain in 3D. Use the sliders to adjust its appearance and size.</p>
+            <div id="3d-container"></div>
+            <div class="slider-container">
+                <label for="scale-slider">Adjust Size:</label>
+                <input type="range" id="scale-slider" min="0.5" max="5" step="0.1" value="3">
+            </div>
+            <div class="slider-container">
+                <label for="appearance-slider">Change Appearance:</label>
+                <input type="range" id="appearance-slider" min="0" max="100" step="1" value="50">
+            </div>
+        </section>
+
+        <!-- Profile Section -->
+        <section id="profile" class="profile-section">
+            <h1>HELLO EVERYBODY, I AM</h1>
+            <h2>Maxime Dieudonne</h2>
+            <h3>PhD, Neuro-Imaging</h3>
+            <p>
+                My current research focuses on the morphometric analysis of the human cortex,
+                in particular the development of algorithmic tools for the quantification of sulcal depth.
+                On this website, you have access to theoretical resources to learn neuro-imaging.
+            </p>
+            <a href="ressources.html" class="button">Learn Neuro-Imaging</a>
+            <a href="#projects" class="button">Discover My Projects</a>
+        </section>
+    </div>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <h1>Projects</h1>
+        <p>Explore the various research projects I have been working on:</p>
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="images/project_01/image_DPF.png" alt="Sulcal Depth Estimation">
+                <h2>Sulcal Depth Estimation</h2>
+                <p>New sulcal depth estimation method using advanced algorithms.</p>
+                <a href="project_01.html" class="button">Learn More</a>
+            </div>
+            <div class="gallery-item">
+                <img src="images/project_01/image_lines.png" alt="Cortex Manual Labelisation">
+                <h2>Cortex Manual Labelisation</h2>
+                <p>Comprehensive dataset to evaluate sulcal depth methods.</p>
+                <a href="project_02.html" class="button">Learn More</a>
+            </div>
+            <div class="gallery-item">
+                <img src="images/project_01/image_metrics.png" alt="Quantitative Metrics">
+                <h2>Quantitative Metrics</h2>
+                <p>Introducing three new metrics to evaluate sulcal depth accuracy.</p>
+                <a href="project_03.html" class="button">Learn More</a>
+            </div>
         </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>Email: maxime.dieudonne@univ-amu.fr</p>
+        <p><a href="#home">Back to Top</a></p>
     </footer>
 
+    <!-- JavaScript for Mesh and Interaction -->
     <script>
-        // Three.js Initialization
-        const container = document.getElementById('3d-container');
-        const width = container.offsetWidth || 600;
-        const height = container.offsetHeight || 600;
+        // Set up the container dimensions
+const container = document.getElementById('3d-container');
+const width = container.offsetWidth || 500;
+const height = container.offsetHeight || 400;
 
-        // Scene, Camera, Renderer
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-        renderer.setSize(width, height);
-        renderer.setClearColor(0x000000, 0); // Transparent background
-        container.appendChild(renderer.domElement);
+// Create the Three.js scene, camera, and renderer
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+renderer.setSize(width, height);
+renderer.setClearColor(0x000000, 0); // Transparent background
+container.appendChild(renderer.domElement);
 
-        // Lights
-        const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-        directionalLight.position.set(1, 1, 1).normalize();
-        scene.add(directionalLight);
+// Add lights to the scene
+const ambientLight = new THREE.AmbientLight(0x404040, 2);
+scene.add(ambientLight);
+const directionalLight = new THREE.DirectionalLight(0xffffff, 1.5);
+directionalLight.position.set(1, 1, 1).normalize();
+scene.add(directionalLight);
 
-        const ambientLight = new THREE.AmbientLight(0x404040);
-        scene.add(ambientLight);
+// Material for the 3D model
+const material = new THREE.MeshStandardMaterial({
+    color: 0x007BFF,
+    metalness: 0.5,
+    roughness: 0.5,
+    emissive: 0x000000,
+    transparent: true,
+    opacity: 1,
+});
 
-        // Load the 3D model (OBJ)
-        const loader = new THREE.OBJLoader();
-        let model;
-        loader.load(
-            'brain.obj',
-            function (object) {
-                object.position.set(0, -1, 0);
-                object.scale.set(3.5, 3.5, 3.5);
-                model = object;
-                scene.add(object);
-            },
-            function (xhr) {
-                console.log((xhr.loaded / xhr.total) * 100 + '% loaded');
-            },
-            function (error) {
-                console.error('Error loading the model:', error);
+// Load the 3D model
+const loader = new THREE.OBJLoader();
+let model;
+
+loader.load(
+    'brain.obj', // Replace with the correct path to your .obj file
+    function (object) {
+        object.traverse((child) => {
+            if (child.isMesh) {
+                child.material = material;
             }
-        );
-
-        // Camera Position
-        camera.position.z = 5;
-
-        // Mouse Interaction
-        let isDragging = false;
-        let previousMousePosition = { x: 0, y: 0 };
-
-        container.addEventListener('mousedown', () => {
-            isDragging = true;
         });
+        object.position.set(0, -2, 0);
+        object.scale.set(3, 3, 3);
+        model = object;
+        scene.add(object);
+    },
+    function (xhr) {
+        console.log((xhr.loaded / xhr.total) * 100 + '% loaded');
+    },
+    function (error) {
+        console.error('Error loading model:', error);
+    }
+);
 
-        container.addEventListener('mouseup', () => {
-            isDragging = false;
-        });
+// Set the camera position
+camera.position.z = 5;
 
-        container.addEventListener('mousemove', (event) => {
-            if (isDragging && model) {
-                const deltaMove = {
-                    x: event.offsetX - previousMousePosition.x,
-                    y: event.offsetY - previousMousePosition.y,
-                };
+// Variables for user interaction
+let isDragging = false;
+let previousMousePosition = { x: 0, y: 0 };
 
-                model.rotation.y += deltaMove.x * 0.005;
-                model.rotation.x += deltaMove.y * 0.005;
-            }
+// Event listeners for mouse interaction
+container.addEventListener('mousedown', () => (isDragging = true));
+container.addEventListener('mouseup', () => (isDragging = false));
+container.addEventListener('mousemove', (event) => {
+    if (isDragging && model) {
+        const deltaMove = {
+            x: event.offsetX - previousMousePosition.x,
+            y: event.offsetY - previousMousePosition.y,
+        };
+        model.rotation.y += deltaMove.x * 0.005;
+        model.rotation.x += deltaMove.y * 0.005;
+    }
+    previousMousePosition = { x: event.offsetX, y: event.offsetY };
+});
 
-            previousMousePosition = {
-                x: event.offsetX,
-                y: event.offsetY,
-            };
-        });
+// Animation loop
+function animate() {
+    requestAnimationFrame(animate);
 
-        // Animate
-        function animate() {
-            requestAnimationFrame(animate);
-            renderer.render(scene, camera);
-        }
-        animate();
+    // Rotate the model continuously if it exists
+    if (model) {
+        model.rotation.y += 0.01; // Continuous rotation around the Y-axis
+    }
 
-        // Handle window resize
-        window.addEventListener('resize', () => {
-            const newWidth = container.offsetWidth;
-            const newHeight = container.offsetHeight;
-            renderer.setSize(newWidth, newHeight);
-            camera.aspect = newWidth / newHeight;
-            camera.updateProjectionMatrix();
-        });
+    renderer.render(scene, camera);
+}
+animate();
+
+// Handle window resize
+window.addEventListener('resize', () => {
+    const newWidth = container.offsetWidth;
+    const newHeight = container.offsetHeight;
+    renderer.setSize(newWidth, newHeight);
+    camera.aspect = newWidth / newHeight;
+    camera.updateProjectionMatrix();
+});
+
+// Sliders for scaling and appearance
+const scaleSlider = document.getElementById('scale-slider');
+scaleSlider.addEventListener('input', (event) => {
+    if (model) {
+        const value = parseFloat(event.target.value);
+        model.scale.set(value, value, value);
+    }
+});
+
+const appearanceSlider = document.getElementById('appearance-slider');
+appearanceSlider.addEventListener('input', (event) => {
+    const value = parseInt(event.target.value, 10);
+    material.emissive.setHSL(value / 100, 1, 0.5);
+    material.metalness = value / 100;
+    material.roughness = 1 - value / 100;
+    material.needsUpdate = true;
+});
+
+    
     </script>
 </body>
 </html>
