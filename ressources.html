@@ -7,6 +7,7 @@
     <title>Morphométrie Cérébrale</title>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
     <style>
         body {
             font-family: 'Quicksand', sans-serif;
@@ -16,6 +17,67 @@
             background: #f4f7fc;
             color: #333;
         }
+        header {
+            background: #2a4d69;
+            color: #fff;
+            padding: 10px 20px;
+        }
+        header .nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        header .nav ul li {
+            margin: 0 15px;
+        }
+        header .nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+        header .nav ul li a.active {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+        .content {
+            display: flex;
+            margin-top: 20px; /* Ensure space between the navbar and content */
+            padding: 20px;
+        }
+        .sidebar {
+            width: 300px;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-right: 20px;
+            height: 100%;
+        }
+        .sidebar h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin: 10px 0;
+        }
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #2a4d69;
+            font-size: 1rem;
+        }
+        .sidebar ul li a:hover {
+            color: #4682bf;
+        }
+        .container {
+            max-width: 1000px;
+            flex: 1;
+        }
         h1, h2, h3, h4 {
             color: #2a4d69;
         }
@@ -24,27 +86,10 @@
             text-align: center;
             margin: 30px 0;
         }
-        h2 {
-            font-size: 2rem;
-            margin: 40px 0 20px;
-        }
-        h3 {
-            font-size: 1.8rem;
-            margin: 30px 0 10px;
-        }
-        h4 {
-            font-size: 1.5rem;
-            margin: 20px 0 10px;
-        }
         p {
             margin: 15px 0;
             font-size: 1rem;
             line-height: 1.8;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
         }
         .section {
             background: #fff;
@@ -53,161 +98,44 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             margin-bottom: 50px;
         }
-        .highlight {
-            background: #eff7ff;
-            padding: 15px;
-            border-left: 4px solid #4682bf;
-            border-radius: 5px;
-        }
-        blockquote {
-            margin: 20px 0;
-            padding: 15px 20px;
-            background: #fef8e8;
-            border-left: 4px solid #ffa000;
-            font-style: italic;
-            color: #666;
-        }
-        ul {
-            margin: 20px 0;
-            padding-left: 40px;
-        }
-        ul li {
-            margin: 10px 0;
-        }
-        .definition-box {
-            background: #eff7ff;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px 0;
-        }
-        .definition-box h4 {
-            margin-bottom: 15px;
-            font-size: 1.5rem;
-            color: #4682bf;
-        }
-        .definition-box ul li {
-            margin: 10px 0;
-        }
-        .image {
-            margin: 30px 0;
-            text-align: center;
-        }
-        .image img {
-            max-width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        .image .caption {
-            margin-top: 10px;
-            font-size: 0.9rem;
-            color: #555;
-            font-style: italic;
-        }
-        .figure {
-            margin: 40px 0;
-            text-align: center;
-        }
-        .figure img {
-            max-width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        .figure .caption {
-            margin-top: 15px;
-            font-size: 0.9rem;
-            color: #666;
-            font-style: italic;
-        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Morphométrie Cérébrale : Une Exploration Complète</h1>
-
-        <!-- Introduction -->
-        <div class="section">
-            <h2>Enjeux de la Morphométrie Cérébrale</h2>
-            <p>
-                La morphométrie cérébrale est une branche clé de la neuro-imagerie qui relie les <strong>neurosciences</strong>, les <strong>mathématiques</strong> et l'<strong>informatique</strong>. 
-                En tant que sous-branche de l'anatomie computationnelle, elle analyse quantitativement les structures du cerveau à l'aide de procédés numériques avancés.
-            </p>
-            <blockquote>
-                "L’approche morphométrique offre des outils précis pour quantifier la forme du cortex, sans se limiter à une description anatomique traditionnelle."
-            </blockquote>
-            <p>
-                Cette approche propose des descripteurs comme la largeur des sillons, leur profondeur ou leur plissement. 
-                Contrairement aux atlas anatomiques classiques, les méthodes morphométriques se concentrent sur la géométrie et la structure, souvent indépendamment des terminologies anatomiques.
-            </p>
-            <h4>Applications clés :</h4>
+    <header class="header">
+        <nav class="nav">
+            <ul class="menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="ressources.html">Resources</a></li>
+                <li><a href="cv.html">CV</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="content">
+        <div class="sidebar">
+            <h3>Sommaire</h3>
             <ul>
-                <li>Peut-on anticiper la maladie d'Alzheimer à partir de la morphologie du cortex ?</li>
-                <li>Quels sillons partageons-nous avec nos cousins primates ?</li>
-                <li>Comment se plisse le cerveau au fil de son développement ?</li>
+                <li><a href="1_enjeux.html">1. Enjeux de la morphométrie cérébrale</a></li>
+                <li><a href="2_specificites.html">2. Les spécificités de la forme du cortex</a>
+                    <ul>
+                        <li><a href="2_1_couches.html">2.1. Les différentes couches : matière grise et blanche</a></li>
+                        <li><a href="2_2_sulcogenese.html">2.2. La sulcogenèse</a></li>
+                        <li><a href="2_3_morphogenese.html">2.3. La morphogenèse : dépendance à l’âge</a></li>
+                        <li><a href="2_4_topologie.html">2.4. Organisation et variabilité topologique</a></li>
+                    </ul>
+                </li>
+                <li><a href="3_numerique.html">3. Représentation numérique de la surface corticale</a></li>
             </ul>
         </div>
+        <div class="container">
+            <h1>Morphométrie Cérébrale : Une Exploration Complète</h1>
 
-        <!-- Les spécificités du cortex -->
-        <div class="section">
-            <h2>Les Spécificités de la Forme du Cortex</h2>
-            <h3>Matière Grise et Matière Blanche</h3>
-            <p>
-                Le cortex cérébral est constitué de deux couches principales : 
-                la <strong>matière grise</strong>, siège des neurones et de leurs connexions, et la <strong>matière blanche</strong>, 
-                réseau d'axones reliant différentes régions cérébrales. 
-                Ces couches forment deux surfaces distinctes : la <strong>surface piale</strong> (externe) et la <strong>surface interne</strong> (entre la matière grise et blanche).
-            </p>
-            <div class="definition-box">
-                <h4>Définitions :</h4>
-                <ul>
-                    <li><strong>Matière Grise :</strong> Tissu cortical contenant les corps cellulaires des neurones.</li>
-                    <li><strong>Matière Blanche :</strong> Réseau d'axones myélinisés reliant les régions cérébrales.</li>
-                    <li><strong>Surface Piale :</strong> Interface externe entre la matière grise et le liquide céphalo-rachidien.</li>
-                    <li><strong>Surface Interne :</strong> Interface entre la matière grise et la matière blanche.</li>
-                </ul>
-            </div>
-            <div class="image">
-                <img src="figures/1_couches_cerveau.png" alt="Couches du cerveau">
-                <p class="caption">Représentation des différentes couches cérébrales : matière grise, blanche et surfaces associées.</p>
-            </div>
-        </div>
-
-        <!-- Sulcogenèse -->
-        <div class="section">
-            <h2>La Sulcogenèse</h2>
-            <p>
-                La sulcogenèse explore le processus de formation des sillons cérébraux pendant le développement fœtal. 
-                Les sillons primaires apparaissent principalement au cours du troisième trimestre de gestation.
-            </p>
-            <div class="figure">
-                <img src="figures/1_gyration_cerveaux_reels.png" alt="Formation des sillons cérébraux">
-                <p class="caption">Développement des sillons cérébraux au fil de la gestation.</p>
-            </div>
-        </div>
-
-        <!-- Morphogenèse -->
-        <div class="section">
-            <h2>Morphogenèse et Croissance</h2>
-            <p>
-                La morphogenèse cérébrale explore les transformations structurelles du cortex au fil des âges. 
-                Ces changements sont influencés par des facteurs génétiques et environnementaux. 
-                À la naissance, le cerveau pèse environ 400 g et atteint 1,4 kg à l'âge adulte.
-            </p>
-            <div class="figure">
-                <img src="figures/1_brainchart_human_lifespan.png" alt="Courbes de croissance cérébrale">
-                <p class="caption">Courbes de croissance cérébrale : Matière grise, blanche et structures subcorticales.</p>
-            </div>
-        </div>
-
-        <!-- Organisation topologique -->
-        <div class="section">
-            <h2>Organisation Topologique et Variabilité</h2>
-            <p>
-                Les sillons cérébraux montrent une organisation non aléatoire, avec des constantes comme le sillon central, 
-                mais aussi des variations interindividuelles significatives.
-            </p>
-            <div class="figure">
-                <img src="figures/1_variabilité_topologique_interindividuelle.png" alt="Variabilité topologique">
-                <p class="caption">Variabilité topologique des sillons entre individus.</p>
+            <!-- Introduction -->
+            <div class="section">
+                <h2>Bienvenue sur le site dédié à la morphométrie cérébrale</h2>
+                <p>Explorez les différentes facettes de la morphométrie cérébrale à travers un contenu structuré et détaillé.</p>
+                <p>Utilisez le sommaire à gauche pour accéder à chaque section.</p>
             </div>
         </div>
     </div>

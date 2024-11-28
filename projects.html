@@ -3,97 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
     <script src="https://kit.fontawesome.com/82b70b5047.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" href="css/style_projects.css">
+    <style>
+        /* Gallery and layout styling */
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 30px;
+        }
+        .gallery-item {
+            flex: 1 1 calc(33.333% - 40px);
+            max-width: calc(33.333% - 40px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+        }
+    
+    </style>
 </head>
 <body>
-    <div class="wraper">
-		<div class="container">
-		<div class="left-content p-30">
+    <header class="header">
+        <nav class="nav">
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="ressources.html">Resources</a></li>
+                <li><a href="cv.html">CV</a></li>
+            </ul>
+        </nav>
+    </header>
 
-			<nav class="nav"></nav>
-			<div class="left-footer">
-				<div class="social-icons">
-					<ul>
-						<li><a href=""><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
-						<li><a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-						<li><a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-						<li><a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-					</ul>
-				</div>
-				<div class="foot-contact">
-					<ul>
-						<li>maxime.dieudonne@univ-amu.fr</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div class="main-content">
-			<div class="section1 p-30" id="Projects">
-			<div class="sec-title">
-	<div class="pg-sub-title">Projects</div>
-			</div>
-				<div class="d-flex-align-center">
-					<section>
-						<h1>Projects</h1>
-						<div class="container_project">
-							<div class="itemp" id="1">
-								<h2>Sulcal Depth Estimation</h2>
-								<img src="images/project_01/image_DPF.png" alt="">
-								<div class="text">
-									<p>New sulcal depth estimation method</p>
-								</div>
-								<div class="button"><a href="project_01.html">Learn More</a></div>
-							</div>
-							<div class="itemp" id="2">
-								<h2>Cortex Manual labelisation </h2>
-								<img src="images/project_01/image_lines.png" alt="">
-								<div class="text">
-									<p>Here we share a manual labelisation dataset for evaluate sulcal depth methods</p>
-								</div>
-								<div class="button"><a href="project_02.html">Learn More</a></div>
-							</div>
-							<div class="itemp" id="3">
-								<h2>Quantitiv Metrics for evaluate sulcal depth methods</h2>
-								<img src="images/project_01/image_metrics.png" alt="">
-								<div class="text">
-									<p>We introduce 3 quantitives metrics you can use for evaluate depth methods</p>
-								</div>
-								<div class="button"><a href="project_03.html">Learn More</a></div>
-							</div>
-							<div class="itemp" id="4">
-								<h2>The Depth Potential Function</h2>
-								<img src="images/project_01/image_RI.png" alt="">
-								<div class="text">
-									<p>
-										We bring clarification between the anatomical concept of depth and mathematical
-										description provided by a screened Poisson equation expressed on a mesh.
-									</p>
-								</div>
-								<div class="button"><a href="project_04.html">Learn More</a></div>
-							</div>
-							<div class="itemp" id="5">
-								<h2>Development description of the cortex</h2>
-								<img src="images/project_01/image_dev.png" alt="">
-								<div class="text">
-									<p>We explore the use of the sulcal depth as a spatio temporal morphological
-									feature for describing developement trajectory of the cortical surface</p>
-								</div>
-								<div class="button"><a href="project_05.html">Learn More</a></div>
-							</div>
+    <main class="main-content">
+        <div class="layout">
+            <section class="projects-section">
+                <h1>Projects</h1>
+                <p>Explore the various research projects I have been working on:</p>
+                <div class="gallery-container">
+                    <div class="gallery-item">
+                        <img src="images/project_01/image_DPF.png" alt="Sulcal Depth Estimation">
+                        <h2>Sulcal Depth Estimation</h2>
+                        <p>New sulcal depth estimation method</p>
+                        <a href="project_01.html" class="button">Learn More</a>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/project_01/image_lines.png" alt="Cortex Manual Labelisation">
+                        <h2>Cortex Manual Labelisation</h2>
+                        <p>A manual labelisation dataset to evaluate sulcal depth methods</p>
+                        <a href="project_02.html" class="button">Learn More</a>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/project_01/image_metrics.png" alt="Quantitative Metrics">
+                        <h2>Quantitative Metrics</h2>
+                        <p>Three metrics introduced to evaluate sulcal depth methods</p>
+                        <a href="project_03.html" class="button">Learn More</a>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/project_01/image_RI.png" alt="Depth Potential Function">
+                        <h2>Depth Potential Function</h2>
+                        <p>Clarification between anatomical depth and mathematical descriptions</p>
+                        <a href="project_04.html" class="button">Learn More</a>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/project_01/image_dev.png" alt="Cortical Development Description">
+                        <h2>Cortical Development Description</h2>
+                        <p>Using sulcal depth as a feature for cortical development trajectories</p>
+                        <a href="project_05.html" class="button">Learn More</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
 
-						</div>
-					</section>
-				</div>
-			</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-    <script src="script.js"></script>
+    <footer class="footer">
+        <div class="contact-info">
+            <p>Email: maxime.dieudonne@univ-amu.fr</p>
+        </div>
+    </footer>
 </body>
 </html>

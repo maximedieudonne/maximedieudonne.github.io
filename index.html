@@ -1,64 +1,142 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Portolio</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<script src="https://kit.fontawesome.com/82b70b5047.js" crossorigin="anonymous"></script>
-	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://kit.fontawesome.com/82b70b5047.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/OBJLoader.js"></script>
 </head>
 <body>
-	<div class="wraper">
-		<div class="container">
-		<div class="left-content p-30">
+    <header class="header">
+        <nav class="nav">
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="ressources.html">Resources</a></li>
+                <li><a href="cv.html">CV</a></li>
+            </ul>
+        </nav>
+    </header>
 
-			<nav class="nav"></nav>
-			<div class="left-footer">
-				<div class="social-icons">
-					<ul>
-						<li><a href=""><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
-						<li><a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-						<li><a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-						<li><a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-					</ul>
-				</div>
-				<div class="foot-contact">
-					<ul>
-						<li>maxime.dieudonne@univ-amu.fr</li>
-					</ul>
-				</div>
+    <main class="main-content">
+        <div class="layout">
+            <!-- Section pour le maillage 3D -->
+            <section class="mesh-section">
+                <div id="3d-container"></div>
+            </section>
+            
+            <!-- Section pour le profil utilisateur -->
+            <section class="profile-section">
+                <h1>HELLO EVERYBODY, I AM</h1>
+                <h2>Maxime Dieudonne</h2>
+                <h3>PhD Student in Neuro-Imaging</h3>
+                <p>
+                    My current research focuses on the morphometric analysis of the human cortex,
+                    in particular the development of algorithmic tools for the quantification of sulcal depth.
+                </p>
+                <a href="projects.html" class="button">Discover my projects</a>
+            </section>
+        </div>
+    </main>
 
-			</div>
+    <footer class="footer">
+        <div class="contact-info">
+            <p>Email: maxime.dieudonne@univ-amu.fr</p>
+        </div>
+    </footer>
 
-		</div>
-		<div class="main-content">
-			<div class="section1 p-30" id="Home">
-			<div class="sec-title">
-	<div class="pg-sub-title">Home</div>
-	<div class="pg-title">My Profile</div>
-			</div>
-				<div class="d-flex-align-center">
-				<div class="user-img flex-1"><img src="images/cover.png"></div>
-				<div class="user-profile flex-1">
-					<div class="pro-details">
-						<div class="sm-text">HELLO EVERYBODY, I AM</div>
-						<div class="name">Maxime Dieudonne</div>
-						<div class="role">PhD Student in Neuro-Imaging</div>
+    <script>
+        // Three.js Initialization
+        const container = document.getElementById('3d-container');
+        const width = container.offsetWidth || 600;
+        const height = container.offsetHeight || 600;
 
-					</div>
-					<div class="text">
-						My current research focuses on the morphometric analysis of the human cortex,
-						in particular the development of algorithmic tools for the quantification of sulcal depth
-					</div>
-					<div class="button"><a href="projects.html">Discover my projects</a></div>
+        // Scene, Camera, Renderer
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+        renderer.setSize(width, height);
+        renderer.setClearColor(0x000000, 0); // Transparent background
+        container.appendChild(renderer.domElement);
 
-				</div>
-			</div>
-			</div>
+        // Lights
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+        directionalLight.position.set(1, 1, 1).normalize();
+        scene.add(directionalLight);
 
-		</div>
-	</div>
-</div>
+        const ambientLight = new THREE.AmbientLight(0x404040);
+        scene.add(ambientLight);
 
-<script src="script.js"></script>
+        // Load the 3D model (OBJ)
+        const loader = new THREE.OBJLoader();
+        let model;
+        loader.load(
+            'brain.obj',
+            function (object) {
+                object.position.set(0, -1, 0);
+                object.scale.set(3.5, 3.5, 3.5);
+                model = object;
+                scene.add(object);
+            },
+            function (xhr) {
+                console.log((xhr.loaded / xhr.total) * 100 + '% loaded');
+            },
+            function (error) {
+                console.error('Error loading the model:', error);
+            }
+        );
+
+        // Camera Position
+        camera.position.z = 5;
+
+        // Mouse Interaction
+        let isDragging = false;
+        let previousMousePosition = { x: 0, y: 0 };
+
+        container.addEventListener('mousedown', () => {
+            isDragging = true;
+        });
+
+        container.addEventListener('mouseup', () => {
+            isDragging = false;
+        });
+
+        container.addEventListener('mousemove', (event) => {
+            if (isDragging && model) {
+                const deltaMove = {
+                    x: event.offsetX - previousMousePosition.x,
+                    y: event.offsetY - previousMousePosition.y,
+                };
+
+                model.rotation.y += deltaMove.x * 0.005;
+                model.rotation.x += deltaMove.y * 0.005;
+            }
+
+            previousMousePosition = {
+                x: event.offsetX,
+                y: event.offsetY,
+            };
+        });
+
+        // Animate
+        function animate() {
+            requestAnimationFrame(animate);
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            const newWidth = container.offsetWidth;
+            const newHeight = container.offsetHeight;
+            renderer.setSize(newWidth, newHeight);
+            camera.aspect = newWidth / newHeight;
+            camera.updateProjectionMatrix();
+        });
+    </script>
 </body>
 </html>
