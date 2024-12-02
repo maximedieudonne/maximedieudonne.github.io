@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Exploration complète de la morphométrie cérébrale : enjeux, spécificités du cortex, sulcogenèse, morphogenèse et organisation topologique.">
+    <title>Morphométrie Cérébrale</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            background: #f4f7fc;
+            color: #333;
+        }
+        header {
+            background: #2a4d69;
+            color: #fff;
+            padding: 15px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        header .nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        header .nav ul li {
+            margin: 0 15px;
+        }
+        header .nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+        header .nav ul li a.active {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+        .content {
+            display: flex;
+            margin: 80px 20px 20px; /* Add space for fixed navbar */
+            gap: 20px;
+        }
+        .sidebar {
+            flex: 1 1 300px;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            position: sticky;
+            top: 80px; /* Space for navbar */
+            height: fit-content;
+        }
+        .sidebar h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin: 10px 0;
+        }
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #2a4d69;
+            font-size: 1rem;
+        }
+        .sidebar ul li a:hover {
+            color: #4682bf;
+        }
+        .container {
+            flex: 3 1 600px;
+            max-width: 100%;
+        }
+        h1, h2, h3, h4 {
+            color: #2a4d69;
+        }
+        h1 {
+            font-size: 2rem;
+            text-align: center;
+            margin: 30px 0;
+        }
+        p {
+            margin: 15px 0;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+        .section {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .definition-box {
+            background: #f0f4f8;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .definition-box h4 {
+            margin: 0 0 10px;
+        }
+        .image, .figure {
+            text-align: center;
+            margin: 15px 0;
+        }
+        .image img, .figure img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        .image .caption, .figure .caption {
+            font-size: 0.9rem;
+            color: #555;
+        }
+        blockquote {
+        margin: 20px 0;
+        padding: 20px 30px;
+        background: linear-gradient(135deg, #f5f7fa, #e3e6f0);
+        border-left: 6px solid #4CAF50;
+        font-size: 1.2rem;
+        font-style: italic;
+        color: #333;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        position: relative;
+    }
+
+    blockquote:before {
+        content: "“";
+        font-size: 3rem;
+        color: #4CAF50;
+        position: absolute;
+        top: -20px;
+        left: 15px;
+    }
+
+    blockquote:after {
+        content: "”";
+        font-size: 3rem;
+        color: #4CAF50;
+        position: absolute;
+        bottom: -20px;
+        right: 15px;
+    }
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+            .sidebar {
+                margin-bottom: 20px;
+                position: static; /* Sidebar not fixed on smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <ul class="menu">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../ressources.html">Resources</a></li>
+                <li><a href="../../projects.html" class="active">Projects</a></li>
+                <li><a href="../../publications.html">Publications</a></li>
+                <li><a href="../../cv.html">CV</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="content">
+        <aside class="sidebar">
+            <h3>Sommaire</h3>
+            <ul>
+                <li><a href="1_0_les_structures_corticales.html">1. Les structures corticales : du concept à la mesure</a></li>
+                    <ul>
+                        <li><a href="1_1_sulci_gyri.html">1.1 Les sulci et les gyri</a></li>
+                        <li><a href="1_2_regions_sulcales_gyrales.html">1.2 Les régions sulcales et les régions gyrales</a></li>
+                    </ul>
+                <li><a href="2_0_detection_structures_corticales.html">2. Synthèse et limites des méthodes existantes pour détecter les structures corticales</a>
+                    <ul>
+                        <li><a href="2_1_detection_regions_gyrales_sulcales">2.1. Détection des régions sulcales et gyrales</a></li>
+                        <li><a href="2_2_detections_lignes_gyrales_sulcales.html">2.2. Détection des lignes sulcales et gyrales</a></li>
+                    </ul>
+                </li>
+                <li><a href="3_0_forme_prototypique_sillon.html">3. Forme prototypique d'un sillon</a>
+                    <ul>
+                        <li><a href="3_1_enjeu_forme.html">3.1. Enjeux de la forme prototypique des sillons</a></li>
+                        <li><a href="3_2_forme_litterature.html">3.2. Formes prototypiques énoncées dans la littérature</a></li>
+                        <li><a href="3_3_litterature_connexe.html">3.2. littérature connexe</a></li>
+                        <li><a href="3_4_proposition_forme.html">3.3. Propositions de formes de sillons prototypique</a></li>
+                        <li><a href="3_5_classification_forme.html">3.4. Classification empirique des formes de sillons</a></li>
+                    </ul>
+                </li>            
+            </ul>
+        </aside>
+        <main class="container">
+            <h1>Les structures corticales : du concept à la mesure</h1>
+            <div class="content">
+                <section class="section">
+                    <h2>Les Sulci et les Gyri</h2>
+                    <div class="definition-box">
+                        <h4>Définitions</h4>
+                        <ul>
+                            <li><strong>Gyri:</strong> Relatif aux protubérances visibles à la surface du cortex. Ce terme est plus spécifique à l'anatomie du cortex et à la neurochirurgie.</li>
+                            <li><strong>Sulci:</strong> Relatif aux sillons visibles entre les protubérances de la surface corticale. Le sulcus représente la séparation entre les gyri. De même, ce terme est plus spécifique à l'anatomie du cortex et à la neurochirurgie.</li>
+                        </ul>
+                    </div>
+                    <p>
+                        Les termes "gyri" et "sulci" sont couramment employés pour décrire les circonvolutions spécifiques à la surface corticale.
+                        Les gyri représentent les protubérances de cette surface, tandis que les sulci désignent les espaces entre ces protubérances (<cite>Purves, 2004</cite>).
+                    </p>
+                    <p>
+                        Selon cette conception, la surface corticale se compose uniquement de gyri, les sulci étant les séparations définies dans le volume dans lequel la surface corticale est immergée.
+                        Cette représentation est fréquemment utilisée dans le domaine de la neurochirurgie et repose sur des hypothèses et observations anatomo-fonctionnelles.
+                    </p>
+                    <p>
+                        En d'autres termes, les sulci sont associés à la séparation de régions anatomiques fonctionnellement distinctes, tandis que les gyri constituent les éléments anatomiques principaux.
+                    </p>
+                    <p>
+                        À titre d'exemple, le gyrus cingulaire joue un rôle dans le traitement des émotions et la régulation du comportement, tandis que le gyrus précentral est associé à la fonction de l'exécution volontaire des mouvements. 
+                        Le gyrus précentral comprend le contrôle moteur du tronc, des bras, des mains, des doigts et de la tête (organisation spatiale connue sous le nom d'homunculus).
+                    </p>
+                    <p>
+                        De même, le gyrus temporal supérieur est associé à l'audition et au traitement du son. 
+                        Ces fonctions ne sont pas spécifiquement localisées et sont pensées comme un réseau, bien que les gyri demeurent des unités fonctionnelles selon cette perspective.
+                    </p>
+                    <p>
+                        Les sulci délimitent les divisions en créant des frontières entre les lobes. 
+                        Par exemple, le sillon central sépare le lobe pariétal du lobe frontal, définissant ainsi la frontière entre le cortex moteur et le cortex somato-sensoriel primaire.
+                    </p>
+                    <p>
+                        De même, le sillon pariéto-occipital permet de distinguer le lobe occipital du lobe pariétal, auxquels sont associées des fonctions différentes.
+                    </p>
+                </section>
+            </div>
+            
+            
+        </main>
+    </div>
+</body>
+</html>

@@ -171,11 +171,11 @@
     <header>
         <nav class="nav">
             <ul class="menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="ressources.html">Resources</a></li>
-                <li><a href="projects.html" class="active">Projects</a></li>
-                <li><a href="publications.html">Publications</a></li>
-                <li><a href="cv.html">CV</a></li>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../ressources.html">Resources</a></li>
+                <li><a href="../../projects.html" class="active">Projects</a></li>
+                <li><a href="../../publications.html">Publications</a></li>
+                <li><a href="../../cv.html">CV</a></li>
             </ul>
         </nav>
     </header>
@@ -197,54 +197,44 @@
         </aside>
         <main class="container">
             <h1>Morphométrie Cérébrale : Une Exploration Complète</h1>
-            <section class="section">
-                <h2>Les enjeux de la morphométrie cérébrales</h2>
-                <h4>Approche anatomique et approche morphométrique</h4>
-                <p>
-                    La morphométrie cérébrale représente un domaine clé au sein de la neuro-imagerie et engage les neurosciences, les mathématiques et l'informatique. 
-                    Elle se focalise sur l'analyse quantitative et la caractérisation des structures qui composent la surface du cerveau à l'aide de procédés numériques.
-                </p>
-        
-                <blockquote>
-                    "La description anatomique et morphométrique sont deux approches complémentaires qui enrichissent notre compréhension du cerveau."
-                </blockquote>
-        
-                <p>
-                    L'approche morphologique pour décrire la forme du cerveau se distingue de la description anatomique. 
-                    Tandis que la première développe des atlas et des templates, la seconde se concentre sur des descripteurs comme la largeur, l'épaisseur ou la profondeur des sillons. 
-                    Dans nos études, nous adoptons une approche morphométrique pour décrire la surface corticale, sans nous attacher à une nomenclature anatomique.
-                </p>
-                <h4>Des applications variées</h4>
-                <p>
-                    Idéalement, une fois qu'un descripteur est bien construit et validé, il peut être appliqué à des études neuroscientifiques, par exemple :
-                </p>
-                <ul>
-                    <li>Anticiper la maladie d'Alzheimer grâce à la forme du cortex.</li>
-                    <li>Comparer les sillons communs entre les humains et leurs cousins primates.</li>
-                    <li>Explorer les mécanismes du plissement cérébral.</li>
-                </ul>
-                <h4>Dessine moi un cerveau</h4>
-                <p>
-                    Toutefois, les outils de morphométrie ne sont pas dénués d'incertitudes : ils restent des estimateurs de grandeurs conceptuelles et dépendent des hypothèses scientifiques. 
-                    Par exemple, la mesure du "plissement" cortical est influencée par la manière dont elle est conceptualisée et implémentée.
-                </p>
-        
-                <blockquote>
-                    "Les descripteurs morphométriques ne sont pas des données brutes, mais des constructions scientifiques et techniques."
-                </blockquote>
-        
-                <p>
-                    L'étude de la forme du cerveau repose aussi sur une exploration de sa nature intrinsèque. 
-                    Une analogie peut être faite avec le dessin d'un visage : nous dessinons ce que nous connaissons (les yeux, la bouche), mais nous oublions souvent des détails plus subtils comme les tempes ou les maxillaires. 
-                    Cela reflète un principe fondamental : nous décrivons avant tout ce que nous comprenons.
-                </p>
-        
-                <p>
-                    De la même manière, dans l'étude du cerveau, il est crucial de lier les observations morphologiques à une compréhension approfondie de sa nature. 
-                    Cela permet de proposer des descriptions détaillées tout en cherchant à comprendre ce qui rend ces formes uniques et significatives.
-                </p>
-            </section>
-        </main>
-    </div>
+            <div class="content">
+                <section class="section">
+                    <h2>La Morphogenèse : Une Forme qui Dépend de l'Âge</h2>
+                    <p>
+                        Le cerveau fœtal se distingue par une morphologie et une morphométrie différentes de celles du cerveau adulte. 
+                        Comprendre ces disparités revêt une importance cruciale pour élaborer des descripteurs quantitatifs de la surface corticale, quelle que soit la phase de développement cérébral. 
+                        Nous montrerons à plusieurs reprises dans cette thèse que les méthodes actuelles de description de la forme du cerveau sont principalement conçues pour les cerveaux adultes.
+                    </p>
+                    <p>
+                        En termes d'échelle, le poids du cerveau est en moyenne de 400 g à la naissance, 1 kg à 1 an et 1,3 kg à 5 ans. 
+                        À l'âge de 5 ans, le poids du cerveau se rapproche de celui d'un adulte, qui, en moyenne, est de 1,4 kg, représentant environ 2% du poids total du corps humain. 
+                        La taille du cerveau peut augmenter d'un facteur 5 (<cite>Hill_2010</cite>) pour atteindre chez l'adulte des dimensions moyennes de 17 cm de longueur, 14 cm de largeur et 9 cm de hauteur.
+                    </p>
+                    <p>
+                        Dans une étude de 2022 (<cite>Bethlehem_2022</cite>), R.A.I. Bethlehem, J. Seidlitz, S.R. White (Université de Cambridge), avec la contribution de plus d'une centaine d'auteurs, ont proposé des courbes de croissance de différentes métriques du cerveau sur toute la durée de la vie humaine. 
+                        La figure ci-dessous montre la croissance du volume de la matière blanche et de la matière grise, du volume subcortical et ventriculaire. 
+                        Cette figure met en évidence une forte période de croissance jusqu'à l'âge de 6 ans, suivie d'un déclin d'approximativement 15% du volume cérébral et de l'épaisseur corticale entre l'adolescence et 60 ans.
+                    </p>
+                    <div class="image">
+                        <img src="figures/1_brainchart_human_lifespan.png" alt="Courbe de croissance des structures du cerveau">
+                        <p class="caption"><strong>Figure 1:</strong> Courbe de croissance des volumes de matière blanche, matière grise, subcorticale et ventriculaire de la période fœtale à l'âge adulte. Figure issue de <cite>Bethlehem_2022</cite>.</p>
+                    </div>
+                    <p>
+                        Le volume de la matière blanche (VMB) et le volume de la matière grise (VMG) présentent des vitesses de croissance différentes au cours des premiers stades de développement (<cite>Bethlehem_2022</cite>). 
+                        Le VMG augmente de façon non linéaire pendant la période périnatale, tandis que le VMB augmente de façon linéaire pendant l'enfance et le début de l'adolescence. 
+                        Ainsi, le point d'intersection de ces deux trajectoires (autour de la naissance) marque une transition critique où le VMG devient le tissu majoritaire.
+                    </p>
+                    <p>
+                        En outre, cette différence s'accroît jusqu'à 3 ans, lorsque la vitesse du VMG ralentit avant d'atteindre un pic à 6 ans. 
+                        Dans le cadre d'une étude visant à analyser la trajectoire temporelle d'une grandeur morphométrique propre à la surface corticale, le choix de la surface de travail, piale ou interne, peut amener à des conclusions différentes.
+                    </p>
+                    <p>
+                        Dans notre cas, lors de nos travaux de thèse, nous avons travaillé sur la surface interne pour des raisons pratiques. 
+                        La surface interne présente souvent une meilleure qualité de reconstruction. 
+                        Par exemple, une contrainte technique que l'on retrouve chez la surface piale mais pas chez la surface interne est que les circonvolutions de la matière grise peuvent être en contact les unes avec les autres, nécessitant de « décoller » numériquement les circonvolutions pour bien les différencier. 
+                        Les circonvolutions de la surface interne sont plus nettes, ce qui permet de distinguer plus facilement les sillons les uns des autres.
+                    </p>
+                </section>
+            </div>
 </body>
 </html>

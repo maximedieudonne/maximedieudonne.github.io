@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Exploration complète de la morphométrie cérébrale : enjeux, spécificités du cortex, sulcogenèse, morphogenèse et organisation topologique.">
+    <title>Morphométrie Cérébrale</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            background: #f4f7fc;
+            color: #333;
+        }
+        header {
+            background: #2a4d69;
+            color: #fff;
+            padding: 15px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        header .nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        header .nav ul li {
+            margin: 0 15px;
+        }
+        header .nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+        header .nav ul li a.active {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+        .content {
+            display: flex;
+            margin: 80px 20px 20px; /* Add space for fixed navbar */
+            gap: 20px;
+        }
+        .sidebar {
+            flex: 1 1 300px;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            position: sticky;
+            top: 80px; /* Space for navbar */
+            height: fit-content;
+        }
+        .sidebar h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin: 10px 0;
+        }
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #2a4d69;
+            font-size: 1rem;
+        }
+        .sidebar ul li a:hover {
+            color: #4682bf;
+        }
+        .container {
+            flex: 3 1 600px;
+            max-width: 100%;
+        }
+        h1, h2, h3, h4 {
+            color: #2a4d69;
+        }
+        h1 {
+            font-size: 2rem;
+            text-align: center;
+            margin: 30px 0;
+        }
+        p {
+            margin: 15px 0;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+        .section {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .definition-box {
+            background: #f0f4f8;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .definition-box h4 {
+            margin: 0 0 10px;
+        }
+        .image, .figure {
+            text-align: center;
+            margin: 15px 0;
+        }
+        .image img, .figure img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        .image .caption, .figure .caption {
+            font-size: 0.9rem;
+            color: #555;
+        }
+        blockquote {
+        margin: 20px 0;
+        padding: 20px 30px;
+        background: linear-gradient(135deg, #f5f7fa, #e3e6f0);
+        border-left: 6px solid #4CAF50;
+        font-size: 1.2rem;
+        font-style: italic;
+        color: #333;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        position: relative;
+    }
+
+    blockquote:before {
+        content: "“";
+        font-size: 3rem;
+        color: #4CAF50;
+        position: absolute;
+        top: -20px;
+        left: 15px;
+    }
+
+    blockquote:after {
+        content: "”";
+        font-size: 3rem;
+        color: #4CAF50;
+        position: absolute;
+        bottom: -20px;
+        right: 15px;
+    }
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+            .sidebar {
+                margin-bottom: 20px;
+                position: static; /* Sidebar not fixed on smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <ul class="menu">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../ressources.html">Resources</a></li>
+                <li><a href="../../projects.html" class="active">Projects</a></li>
+                <li><a href="../../publications.html">Publications</a></li>
+                <li><a href="../../cv.html">CV</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="content">
+        <aside class="sidebar">
+            <h3>Sommaire</h3>
+            <ul>
+                <li><a href="1_enjeux.html">1. Enjeux de la morphométrie cérébrale</a></li>
+                <li><a href="2_specificites.html">2. Les spécificités de la forme du cortex</a>
+                    <ul>
+                        <li><a href="2_1_couches.html">2.1. Les différentes couches : matière grise et blanche</a></li>
+                        <li><a href="2_2_sulcogenese.html">2.2. La sulcogenèse</a></li>
+                        <li><a href="2_3_morphogenese.html">2.3. La morphogenèse : dépendance à l’âge</a></li>
+                        <li><a href="2_4_topologie.html">2.4. Organisation et variabilité topologique</a></li>
+                    </ul>
+                </li>
+                <li><a href="3_numerique.html">3. Représentation numérique de la surface corticale</a></li>
+            </ul>
+        </aside>
+        <main class="container">
+            <h1>Morphométrie Cérébrale : Une Exploration Complète</h1>
+            <section class="section">
+                <h2>Les différentes couches du cortex : matière grise et matière blanche</h2>
+                <h3>Les différentes couches du cerveau et les surfaces associées</h3>
+                <p>
+                    À partir de la naissance, le cerveau est organisé en différentes couches : le liquide céphalo-rachidien, la <strong>matière grise</strong> et la <strong>matière blanche</strong>. 
+                    La surface entre la matière grise et le liquide céphalo-rachidien se nomme la <strong>surface piale</strong>, tandis que la surface entre la matière grise et la matière blanche se nomme la <strong>surface interne</strong>, ou, par abus de langage, simplement matière blanche.
+                </p>
+                <p>
+                    La figure ci-dessous illustre une coupe coronale du cerveau et les différentes surfaces associées aux couches : la surface interne et la surface piale.
+                </p>
+                <div class="image">
+                    <img src="figures/1_couches_cerveau.png" alt="Photographie et schéma des différentes couches du cerveau">
+                    <p class="caption"><strong>Figure 1:</strong> Photographie et schéma des différentes couches du cerveau. A : Image anatomique. B : Représentation schématique. C : Position des surfaces.</p>
+                </div>
+
+                <div class="definition-box">
+                    <h4>Définitions</h4>
+                    <ul>
+                        <li><strong>Matière blanche</strong>: Constituée d'axones myélinisés, elle connecte les différentes aires de matière grise.</li>
+                        <li><strong>Matière grise</strong>: Composée des corps cellulaires des neurones, dendrites, et cellules gliales.</li>
+                        <li><strong>Surface interne</strong>: Surface entre la matière blanche et la matière grise.</li>
+                        <li><strong>Surface piale / externe</strong>: Surface entre la matière grise et le liquide céphalo-rachidien.</li>
+                    </ul>
+                </div>
+                <p>
+                    La matière blanche est composée d’axones myélinisés. C’est la gaine de myéline, de couleur blanche, qui donne son nom à la matière blanche. 
+                    Les axones s’organisent en fibres, mises en évidence par des techniques de <strong>myélo-architectonie</strong>.
+                </p>
+                <p>
+                    En revanche, la matière grise contient une diversité de neurones, d’axones non myélinisés, et de cellules gliales. Des techniques de <strong>cyto-architectonie</strong> permettent de révéler sa composition cellulaire.
+                </p>
+                <div class="image">
+                    <img src="figures/1_histophysiologie_cortex.png" alt="Histophysiologie du cortex cérébral">
+                    <p class="caption"><strong>Figure 2:</strong> Histophysiologie du cortex cérébral. Description des 6 couches et des types neuronaux associés.</p>
+                </div>
+                <h3>Histologie et neurogenèse</h3>
+                <p>
+                    Des études montrent que le développement du cerveau est marqué par des événements comme la prolifération neuronale, la migration, et la synaptogenèse. Ces processus varient selon les âges et façonnent les couches du cortex dès la naissance.
+                </p>
+                <p>
+                    Par exemple, les 6 couches corticales, définies à partir de la naissance, traduisent une spécialisation fonctionnelle. La forme visible des plis du cortex résulte de ces processus neurogénétiques, soulevant des questions sur la correspondance entre micro et macro-anatomie.
+                </p>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

@@ -3,119 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Exploration complète de la morphométrie cérébrale : enjeux, spécificités du cortex, sulcogenèse, morphogenèse et organisation topologique.">
-    <title>Morphométrie Cérébrale</title>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <title>Apprendre l'imagerie cérébrale</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Quicksand', sans-serif;
             line-height: 1.8;
             margin: 0;
             padding: 0;
-            background: #f4f7fc;
-            color: #333;
+            background: linear-gradient(to bottom, #1a1a2e, #0f3460);
+            color: #fff;
         }
-        
-        .content {
+        header {
+            background: #16213e;
+            padding: 1em 0;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            color: #e94560;
+        }
+        header p {
+            font-size: 1.2rem;
+            margin-top: 0.5em;
+        }
+        nav {
+            background: #0f3460;
+            padding: 0.5em 0;
+        }
+        nav ul {
             display: flex;
-            margin-top: 20px; /* Ensure space between the navbar and content */
-            padding: 20px;
-        }
-        .sidebar {
-            width: 300px;
-            background: #fff;
-            padding: 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            margin-right: 20px;
-            height: 100%;
-        }
-        .sidebar h3 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-        }
-        .sidebar ul {
+            justify-content: center;
             list-style: none;
             padding: 0;
+            margin: 0;
         }
-        .sidebar ul li {
-            margin: 10px 0;
+        nav ul li {
+            margin: 0 15px;
         }
-        .sidebar ul li a {
+        nav ul li a {
             text-decoration: none;
-            color: #2a4d69;
+            color: #fff;
             font-size: 1rem;
+            padding: 0.5em 1em;
+            transition: background 0.3s, color 0.3s;
         }
-        .sidebar ul li a:hover {
-            color: #4682bf;
+        nav ul li a:hover {
+            background: #e94560;
+            color: #fff;
+            border-radius: 5px;
         }
-        .container {
-            max-width: 1000px;
-            flex: 1;
+        .courses-section {
+            max-width: 1200px;
+            margin: 2em auto;
+            padding: 0 20px;
         }
-        h1, h2, h3, h4 {
-            color: #2a4d69;
-        }
-        h1 {
-            font-size: 2.5rem;
+        .courses-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1em;
             text-align: center;
-            margin: 30px 0;
+            color: #e94560;
         }
-        p {
-            margin: 15px 0;
-            font-size: 1rem;
-            line-height: 1.8;
-        }
-        .section {
-            background: #fff;
-            padding: 30px;
+        .course-item {
+            display: flex;
+            align-items: center;
+            background: #16213e;
+            padding: 1.5em;
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            margin-bottom: 50px;
+            margin-bottom: 1.5em;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .course-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        }
+        .course-item img {
+            width: 150px;
+            height: auto;
+            margin-right: 20px;
+            border-radius: 10px;
+        }
+        .course-item h3 {
+            font-size: 1.8rem;
+            color: #e94560;
+            margin-bottom: 0.5em;
+        }
+        .course-item p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+        .course-item a {
+            display: inline-block;
+            margin-top: 1em;
+            padding: 0.8em 1.5em;
+            background: #e94560;
+            color: #fff;
+            font-size: 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .course-item a:hover {
+            background: #ff6b81;
+            transform: scale(1.05);
         }
     </style>
 </head>
 <body>
-    <!-- Header Section -->
-    <header class="header">
-        <nav class="nav">
-            <ul class="menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="ressources.html">Resources</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="publications.html">Publications</a></li>
-                <li><a href="cv.html">CV</a></li>
-            </ul>
-        </nav>
-    </header>
-    <div class="content">
-        <div class="sidebar">
-            <h3>Sommaire</h3>
-            <ul>
-                <li><a href="1_enjeux.html">1. Enjeux de la morphométrie cérébrale</a></li>
-                <li><a href="2_specificites.html">2. Les spécificités de la forme du cortex</a>
-                    <ul>
-                        <li><a href="2_1_couches.html">2.1. Les différentes couches : matière grise et blanche</a></li>
-                        <li><a href="2_2_sulcogenese.html">2.2. La sulcogenèse</a></li>
-                        <li><a href="2_3_morphogenese.html">2.3. La morphogenèse : dépendance à l’âge</a></li>
-                        <li><a href="2_4_topologie.html">2.4. Organisation et variabilité topologique</a></li>
-                    </ul>
-                </li>
-                <li><a href="3_numerique.html">3. Représentation numérique de la surface corticale</a></li>
-            </ul>
-        </div>
-        <div class="container">
-            <h1>Morphométrie Cérébrale : Une Exploration Complète</h1>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="cours.html">Cours</a></li>
+            <li><a href="projets.html">Projets</a></li>
+            <li><a href="ressources.html">Ressources</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
-            <!-- Introduction -->
-            <div class="section">
-                <h2>Bienvenue sur le site dédié à la morphométrie cérébrale</h2>
-                <p>Explorez les différentes facettes de la morphométrie cérébrale à travers un contenu structuré et détaillé.</p>
-                <p>Utilisez le sommaire à gauche pour accéder à chaque section.</p>
+    <!-- Header Section -->
+    <header>
+        <h1>Apprendre l'imagerie cérébrale</h1>
+        <p>Une exploration approfondie des concepts de l'imagerie cérébrale</p>
+    </header>
+
+    <!-- Courses Section -->
+    <section class="courses-section">
+        <h2>Nos Cours</h2>
+
+        <div class="course-item">
+            <img src="images/illu_cours1.png" alt="Introduction à l'imagerie cérébrale">
+            <div>
+                <h3>Introduction à l'imagerie cérébrale</h3>
+                <p>Découvrez les bases de l'imagerie cérébrale, y compris les technologies et méthodologies utilisées pour explorer le cerveau humain.</p>
+                <a href="lessons/intro_imagerie/1_enjeux.html">Commencer</a>
             </div>
         </div>
-    </div>
+
+        <div class="course-item">
+            <img src="images/illu_cours2.png" alt="Les structures corticales">
+            <div>
+                <h3>Les structures corticales</h3>
+                <p>Explorez les différentes structures corticales et leur rôle dans le fonctionnement du cerveau.</p>
+                <a href="lessons/structures_corticales.html">Explorer</a>
+            </div>
+        </div>
+
+        <div class="course-item">
+            <img src="images/illu_cours3.png" alt="La profondeur sulcale">
+            <div>
+                <h3>La profondeur sulcale</h3>
+                <p>Apprenez à analyser la profondeur sulcale et son importance dans l'étude de la morphométrie cérébrale.</p>
+                <a href="lessons/profondeur_sulcale.html">Découvrir</a>
+            </div>
+        </div>
+    </section>
 </body>
 </html>

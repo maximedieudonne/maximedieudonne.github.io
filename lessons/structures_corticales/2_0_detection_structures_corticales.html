@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Exploration complète de la morphométrie cérébrale : enjeux, spécificités du cortex, sulcogenèse, morphogenèse et organisation topologique.">
+    <title>Morphométrie Cérébrale</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            background: #f4f7fc;
+            color: #333;
+        }
+        header {
+            background: #2a4d69;
+            color: #fff;
+            padding: 15px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        header .nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        header .nav ul li {
+            margin: 0 15px;
+        }
+        header .nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+        header .nav ul li a.active {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+        .content {
+            display: flex;
+            margin: 80px 20px 20px; /* Add space for fixed navbar */
+            gap: 20px;
+        }
+        .sidebar {
+            flex: 1 1 300px;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            position: sticky;
+            top: 80px; /* Space for navbar */
+            height: fit-content;
+        }
+        .sidebar h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin: 10px 0;
+        }
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #2a4d69;
+            font-size: 1rem;
+        }
+        .sidebar ul li a:hover {
+            color: #4682bf;
+        }
+        .container {
+            flex: 3 1 600px;
+            max-width: 100%;
+        }
+        h1, h2, h3, h4 {
+            color: #2a4d69;
+        }
+        h1 {
+            font-size: 2rem;
+            text-align: center;
+            margin: 30px 0;
+        }
+        p {
+            margin: 15px 0;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+        .section {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .definition-box {
+            background: #f0f4f8;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .definition-box h4 {
+            margin: 0 0 10px;
+        }
+        .image, .figure {
+            text-align: center;
+            margin: 15px 0;
+        }
+        .image img, .figure img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        .image .caption, .figure .caption {
+            font-size: 0.9rem;
+            color: #555;
+        }
+        blockquote {
+        margin: 20px 0;
+        padding: 20px 30px;
+        background: linear-gradient(135deg, #f5f7fa, #e3e6f0);
+        border-left: 6px solid #4CAF50;
+        font-size: 1.2rem;
+        font-style: italic;
+        color: #333;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        position: relative;
+    }
+
+    blockquote:before {
+        content: "“";
+        font-size: 3rem;
+        color: #4CAF50;
+        position: absolute;
+        top: -20px;
+        left: 15px;
+    }
+
+    blockquote:after {
+        content: "”";
+        font-size: 3rem;
+        color: #4CAF50;
+        position: absolute;
+        bottom: -20px;
+        right: 15px;
+    }
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+            .sidebar {
+                margin-bottom: 20px;
+                position: static; /* Sidebar not fixed on smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <ul class="menu">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../ressources.html">Resources</a></li>
+                <li><a href="../../projects.html" class="active">Projects</a></li>
+                <li><a href="../../publications.html">Publications</a></li>
+                <li><a href="../../cv.html">CV</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="content">
+        <aside class="sidebar">
+            <h3>Sommaire</h3>
+            <ul>
+                <li><a href="1_0_les_structures_corticales.html">1. Les structures corticales : du concept à la mesure</a></li>
+                    <ul>
+                        <li><a href="1_1_sulci_gyri.html">1.1 Les sulci et les gyri</a></li>
+                        <li><a href="1_2_regions_sulcales_gyrales.html">1.2 Les régions sulcales et les régions gyrales</a></li>
+                    </ul>
+                <li><a href="2_0_detection_structures_corticales.html">2. Synthèse et limites des méthodes existantes pour détecter les structures corticales</a>
+                    <ul>
+                        <li><a href="2_1_detection_regions_gyrales_sulcales">2.1. Détection des régions sulcales et gyrales</a></li>
+                        <li><a href="2_2_detections_lignes_gyrales_sulcales.html">2.2. Détection des lignes sulcales et gyrales</a></li>
+                    </ul>
+                </li>
+                <li><a href="3_0_forme_prototypique_sillon.html">3. Forme prototypique d'un sillon</a>
+                    <ul>
+                        <li><a href="3_1_enjeu_forme.html">3.1. Enjeux de la forme prototypique des sillons</a></li>
+                        <li><a href="3_2_forme_litterature.html">3.2. Formes prototypiques énoncées dans la littérature</a></li>
+                        <li><a href="3_3_litterature_connexe.html">3.2. littérature connexe</a></li>
+                        <li><a href="3_4_proposition_forme.html">3.3. Propositions de formes de sillons prototypique</a></li>
+                        <li><a href="3_5_classification_forme.html">3.4. Classification empirique des formes de sillons</a></li>
+                    </ul>
+                </li>            
+            </ul>
+        </aside>
+        <main class="container">
+            <h1>Les structures corticales : du concept à la mesure</h1>
+            <div class="content">
+                <section class="section">
+                    <h2>Synthèse et limites des méthodes existantes pour détecter les structures corticales</h2>
+                    <p>
+                        Dans cette section, nous présentons les limites des méthodes existantes pour détecter les structures corticales. 
+                        Notre objectif n'est pas de proposer une revue de littérature exhaustive, mais plutôt de mettre en évidence : 
+                        (1) comment les limites conceptuelles induisent des limites méthodologiques et 
+                        (2) questionner l'emploi de la profondeur sulcale dans la parcellisation des structures corticales. 
+                        Cela nous sera utile dans le chapitre suivant (chapitre <a href="#Revue de littérature : Estimation de la profondeur sulcale, méthodes existantes et limites">Revue de littérature : Estimation de la profondeur sulcale, méthodes existantes et limites</a>), 
+                        où nous serons amenés à discuter des définitions des structures corticales sous-jacentes aux différentes méthodes d'estimation de la profondeur sulcale.
+                    </p>
+                    <p>
+                        Dans la mesure du possible, nous cherchons à illustrer nos propos par des tests empiriques sur des surfaces d'âges et de tailles différents. 
+                        Nous n'avons pas mené d'étude approfondie sur une grande base de données, mais nous nous positionnons selon le raisonnement suivant : 
+                        "Je suis un chargé de recherche qui souhaite parcelliser un ensemble de structures corticales pour mon étude. 
+                        J'utilise, par exemple, des surfaces disponibles dans la base de données dHCP. À quelles limites méthodologiques dois-je m'attendre si j'emploie les méthodes usuelles ?"
+                    </p>
+            
+                    <h3>Détection des régions sulcales et gyrales</h3>
+                    <p>
+                        Nous proposons de catégoriser les différentes méthodes de détection des régions sulcales et gyrales en deux groupes distincts : 
+                        (1) les méthodes fondées sur la courbure et 
+                        (2) les méthodes basées sur la profondeur sulcale. 
+                        Nous avons présenté deux approches pour définir les sulci : 
+                        la première consiste à identifier les sulci (ou les "objets sillons") en interpolant les volumes représentatifs des espaces intermédiaires entre les circonvolutions de la surface ; 
+                        la seconde vise à identifier les "régions sulcales", désignant ainsi les zones de la surface localisées dans la partie interne des plissements. 
+                        Nous passons en revue la littérature portant sur les méthodes de détection des régions sulcales, c'est-à-dire celles définies directement sur la surface corticale.
+                    </p>
+            
+                    <h4>Méthodes basées sur la courbure</h4>
+                    <p>
+                        L'utilisation de la courbure pour détecter les régions sulcales repose sur l'idée que les gyri sont "convexes" et les sulci sont "concaves". 
+                        Selon cette hypothèse, la méthode la plus directe consiste à détecter les régions sulcales et gyrales selon le signe de la courbure moyenne.
+                        Cependant, cette caractérisation ne s'applique pas à l'ensemble des motifs de plissements (par exemple, les affaissements présents dans les parois sulcales sont détectés comme des régions sulcales). 
+                    </p>
+                    <p>
+                        C'est pourquoi <cite>Shi et al., 2008</cite> impose que les régions sulcales et gyrales soient deux régions compactes en formulant un problème de minimisation qui cherche à optimiser le ratio entre le signe de la courbure et la continuité des régions. 
+                        <cite>Demirci & Holland, 2022</cite> utilise, quant à lui, le shape index pour définir un gradient sulco-gyral. 
+                    </p>
+                    <p>
+                        Nous pouvons également mentionner la méthode "surface profiling", connexe à la notion de courbure, introduite par <cite>Li et al., 2010</cite>. 
+                        Le principe consiste à définir un voisinage en un point et à utiliser un ensemble de descripteurs exprimés en fonction du plan tangent en ce point (par exemple, la distance euclidienne moyenne au plan tangent des points dans un voisinage donné). 
+                        Une méthode de clustering est ensuite appliquée sur les profils de descripteurs obtenus pour définir des motifs de plissements d'intérêt. 
+                    </p>
+                    <p>
+                        Cependant, il est important de noter que les profils de courbure des régions gyrales et sulcales peuvent être très variés. 
+                        Dans la figure ci-dessous, nous présentons trois profils de courbure issus des bases de données dHCP et KKI, correspondant à différentes gyrations.
+                    </p>
+                    <div class="image">
+                        <img src="figures/2_limite_courbure_detection_sulci.png" alt="Limites de la courbure pour détecter les régions sulcales/gyrales">
+                        <p class="caption"><strong>Figure 1:</strong> Limites de la courbure pour détecter les régions sulcales/gyrales. <cite>Shi et al., 2008</cite>.</p>
+                    </div>
+            
+                    <p>
+                        De même, l'utilisation du shape index et la minimisation fonctionnelle présentent des limites similaires. 
+                        La méthode basée sur une minimisation fonctionnelle exprimée selon la courbure permet de bien séparer les régions gyrales et sulcales selon le critère 'interne/externe', mais la délimitation est très influencée par les circonvolutions sur les parois sulcales (voir figure ci-dessous).
+                    </p>
+                    <div class="image">
+                        <img src="figures/2_limite_shapeindex_detection_sulci.png" alt="Limites des méthodes basées sur la courbure pour détecter les régions sulcales/gyrales">
+                        <p class="caption"><strong>Figure 2:</strong> Limites des méthodes basées sur la courbure pour détecter les régions sulcales/gyrales : shape index et fonctionnelle.</p>
+                    </div>
+            
+                    <h4>Méthodes basées sur la profondeur sulcale</h4>
+                    <p>
+                        L'utilisation de la profondeur sulcale repose sur l'idée que les gyri sont "externes/en haut" et les sulci sont "internes/en bas". 
+                    </p>
+                    <p>
+                        Une première approche simple consiste à utiliser la carte de profondeur en tant que telle pour définir un gradient sulco-gyral. 
+                        Par exemple, l'étude <cite>Chen et al., 2017</cite> se base sur la méthode d'estimation de profondeur SULC pour l'altitude gyrale ("Gyral altitude" dans l'article). 
+                    </p>
+                    <p>
+                        Une troisième approche consiste à détecter les minima de profondeur et à utiliser un algorithme de watershed.
+                        Cette méthode présente deux principales limitations. 
+                        Premièrement, les résultats obtenus dépendent de la méthode de mesure de la profondeur utilisée. 
+                        Deuxièmement, une autre limite de la méthode watershed est que les frontières des bassins ne correspondent pas nécessairement aux limites des bassins eux-mêmes.
+                    </p>
+                    <div class="image">
+                        <img src="figures/2_limite_profondeur_detection_sulci.png" alt="Limites de l'utilisation de la profondeur sulcale pour détecter les régions sulcales/gyrales">
+                        <p class="caption"><strong>Figure 3:</strong> Limites de l'utilisation de la profondeur sulcale pour détecter les régions sulcales/gyrales.</p>
+                    </div>
+                </section>
+            </div>
+            
+        </main>
+    </div>
+</body>
+</html>

@@ -171,11 +171,11 @@
     <header>
         <nav class="nav">
             <ul class="menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="ressources.html">Resources</a></li>
-                <li><a href="projects.html" class="active">Projects</a></li>
-                <li><a href="publications.html">Publications</a></li>
-                <li><a href="cv.html">CV</a></li>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../ressources.html">Resources</a></li>
+                <li><a href="../../projects.html" class="active">Projects</a></li>
+                <li><a href="../../publications.html">Publications</a></li>
+                <li><a href="../../cv.html">CV</a></li>
             </ul>
         </nav>
     </header>
@@ -197,50 +197,66 @@
         </aside>
         <main class="container">
             <h1>Morphométrie Cérébrale : Une Exploration Complète</h1>
-            <section class="section">
-                <h2>Les différentes couches du cortex : matière grise et matière blanche</h2>
-                <h3>Les différentes couches du cerveau et les surfaces associées</h3>
-                <p>
-                    À partir de la naissance, le cerveau est organisé en différentes couches : le liquide céphalo-rachidien, la <strong>matière grise</strong> et la <strong>matière blanche</strong>. 
-                    La surface entre la matière grise et le liquide céphalo-rachidien se nomme la <strong>surface piale</strong>, tandis que la surface entre la matière grise et la matière blanche se nomme la <strong>surface interne</strong>, ou, par abus de langage, simplement matière blanche.
-                </p>
-                <p>
-                    La figure ci-dessous illustre une coupe coronale du cerveau et les différentes surfaces associées aux couches : la surface interne et la surface piale.
-                </p>
-                <div class="image">
-                    <img src="figures/1_couches_cerveau.png" alt="Photographie et schéma des différentes couches du cerveau">
-                    <p class="caption"><strong>Figure 1:</strong> Photographie et schéma des différentes couches du cerveau. A : Image anatomique. B : Représentation schématique. C : Position des surfaces.</p>
-                </div>
-
-                <div class="definition-box">
-                    <h4>Définitions</h4>
+            <div class="content">
+                <section class="section">
+                    <h2>Représentation numérique de la surface corticale</h2>
+                    <p>
+                        Concrètement, comment procédons-nous pour développer des outils d'analyse numérique de la forme du cortex ?
+                        Nous utilisons des surfaces 3D reconstruites numériquement à partir d'images à résonance magnétique (IRM).
+                    </p>
+            
+                    <div class="definition-box">
+                        <h4>Définitions des mots clefs</h4>
+                        <ul>
+                            <li><strong>Volume IRM:</strong> Le volume IRM est l'ensemble des images 2D du cerveau obtenues lors d'une acquisition dans un scanner IRM (imagerie par résonance magnétique). 
+                                Les images 2D peuvent être prises dans une ou plusieurs directions (typiquement coronal, axial et sagittal) et selon différentes résolutions (ordre de grandeur usuel : 1 mm isotropique ; 0,8 mm est une bonne résolution ; 0,3 mm est une très bonne résolution).
+                            </li>
+                            <li><strong>Surface reconstruite:</strong> Objet numérique 3D qui représente une surface (surface piale ou surface interne) délimitée à partir du volume IRM.
+                            </li>
+                        </ul>
+                    </div>
+            
+                    <p>
+                        Avant les avancées récentes en imagerie médicale, notamment avant les années 2000, la structure du cerveau était principalement étudiée à partir de cerveaux post-mortem. 
+                        Cette méthode, bien que précieuse pour des études anatomiques approfondies, présente des limites en termes d'observation des processus dynamiques et des changements structurels en temps réel dans le cerveau vivant. Ces observations étaient souvent basées sur l'examen microscopique des tissus cérébraux après fixation et traitement histologique.
+                    </p>
+            
+                    <p>
+                        Par la suite, l'avènement des techniques d'imagerie modernes, telles que l'imagerie par résonance magnétique (IRM), a révolutionné la manière dont nous étudions la structure et les changements cérébraux chez les individus vivants. 
+                        L'IRM offre des avantages considérables, notamment la possibilité d'acquérir des images non invasives et quasi en temps réel (environ 1 seconde) du cerveau, fournissant ainsi des informations inestimables sur la morphologie, la connectivité et les fonctions cérébrales.
+                    </p>
+            
+                    <p>
+                        Les progrès récents des outils de traitement d'images appliqués aux IRM permettent l'extraction automatique de la surface corticale sous la forme de modèles tridimensionnels, élargissant ainsi la palette d'outils pour étudier la complexité de la structure cérébrale.
+                    </p>
+            
+                    <blockquote>
+                        « Functional and structural mapping of human cerebral cortex: Solutions are in the surfaces »<br>
+                        - <cite>Van Essen, 1998</cite>
+                    </blockquote>
+            
+                    <p>
+                        Les avantages de la surface reconstruite par rapport au volume IRM, avancés par cette étude, sont les suivants :
+                    </p>
                     <ul>
-                        <li><strong>Matière blanche</strong>: Constituée d'axones myélinisés, elle connecte les différentes aires de matière grise.</li>
-                        <li><strong>Matière grise</strong>: Composée des corps cellulaires des neurones, dendrites, et cellules gliales.</li>
-                        <li><strong>Surface interne</strong>: Surface entre la matière blanche et la matière grise.</li>
-                        <li><strong>Surface piale / externe</strong>: Surface entre la matière grise et le liquide céphalo-rachidien.</li>
+                        <li>La surface préserve la topologie du cortex.</li>
+                        <li>Le voisinage en un point donné de la surface est plus pertinent que le voisinage en un point du volume.</li>
+                        <li>Le recalage surfacique est plus régulier.</li>
+                        <li>Le recalage à partir de la surface améliore la comparaison interespèces.</li>
                     </ul>
-                </div>
-                <p>
-                    La matière blanche est composée d’axones myélinisés. C’est la gaine de myéline, de couleur blanche, qui donne son nom à la matière blanche. 
-                    Les axones s’organisent en fibres, mises en évidence par des techniques de <strong>myélo-architectonie</strong>.
-                </p>
-                <p>
-                    En revanche, la matière grise contient une diversité de neurones, d’axones non myélinisés, et de cellules gliales. Des techniques de <strong>cyto-architectonie</strong> permettent de révéler sa composition cellulaire.
-                </p>
-                <div class="image">
-                    <img src="figures/1_histophysiologie_cortex.png" alt="Histophysiologie du cortex cérébral">
-                    <p class="caption"><strong>Figure 2:</strong> Histophysiologie du cortex cérébral. Description des 6 couches et des types neuronaux associés.</p>
-                </div>
-                <h3>Histologie et neurogenèse</h3>
-                <p>
-                    Des études montrent que le développement du cerveau est marqué par des événements comme la prolifération neuronale, la migration, et la synaptogenèse. Ces processus varient selon les âges et façonnent les couches du cortex dès la naissance.
-                </p>
-                <p>
-                    Par exemple, les 6 couches corticales, définies à partir de la naissance, traduisent une spécialisation fonctionnelle. La forme visible des plis du cortex résulte de ces processus neurogénétiques, soulevant des questions sur la correspondance entre micro et macro-anatomie.
-                </p>
-            </section>
-        </main>
-    </div>
+            
+                    <p>
+                        La figure ci-dessous donne un aperçu du principe de reconstruction, à savoir générer une surface 3D à partir d'un volume IRM. 
+                        Le principe général est le suivant : une première étape de segmentation permet d'identifier les voxels correspondant aux contours des différentes régions du cerveau, puis une seconde étape de reconstruction crée un maillage tridimensionnel en interpolant la position de ces sommets à partir de la position des voxels associés aux contours des différentes régions.
+                    </p>
+            
+                    <div class="image">
+                        <img src="figures/1_reconstruction_surface.png" alt="Reconstruction de surface 3D du cortex">
+                        <p class="caption"><strong>Figure 1:</strong> Reconstruction de surface 3D du cortex à partir d'un volume IRM. Le volume IRM est constitué d'un ensemble d'images 2D (slices/coupes). Sur chaque slice, les contours de la matière blanche et grise sont automatiquement délimités. Le volume IRM permet de définir un ensemble de voxels ("petits cubes"). Des algorithmes d'interpolation convertissent ensuite l'ensemble des voxels en une surface 3D.</p>
+                    </div>
+                </section>
+            </div>
+            
+            
 </body>
 </html>

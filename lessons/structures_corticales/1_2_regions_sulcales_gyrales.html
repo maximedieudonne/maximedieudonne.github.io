@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Exploration complète de la morphométrie cérébrale : enjeux, spécificités du cortex, sulcogenèse, morphogenèse et organisation topologique.">
+    <title>Morphométrie Cérébrale</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            background: #f4f7fc;
+            color: #333;
+        }
+        header {
+            background: #2a4d69;
+            color: #fff;
+            padding: 15px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        header .nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        header .nav ul li {
+            margin: 0 15px;
+        }
+        header .nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+        header .nav ul li a.active {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+        .content {
+            display: flex;
+            margin: 80px 20px 20px; /* Add space for fixed navbar */
+            gap: 20px;
+        }
+        .sidebar {
+            flex: 1 1 300px;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            position: sticky;
+            top: 80px; /* Space for navbar */
+            height: fit-content;
+        }
+        .sidebar h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin: 10px 0;
+        }
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #2a4d69;
+            font-size: 1rem;
+        }
+        .sidebar ul li a:hover {
+            color: #4682bf;
+        }
+        .container {
+            flex: 3 1 600px;
+            max-width: 100%;
+        }
+        h1, h2, h3, h4 {
+            color: #2a4d69;
+        }
+        h1 {
+            font-size: 2rem;
+            text-align: center;
+            margin: 30px 0;
+        }
+        p {
+            margin: 15px 0;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+        .section {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .definition-box {
+            background: #f0f4f8;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .definition-box h4 {
+            margin: 0 0 10px;
+        }
+        .image, .figure {
+            text-align: center;
+            margin: 15px 0;
+        }
+        .image img, .figure img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        .image .caption, .figure .caption {
+            font-size: 0.9rem;
+            color: #555;
+        }
+        blockquote {
+        margin: 20px 0;
+        padding: 20px 30px;
+        background: linear-gradient(135deg, #f5f7fa, #e3e6f0);
+        border-left: 6px solid #4CAF50;
+        font-size: 1.2rem;
+        font-style: italic;
+        color: #333;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        position: relative;
+    }
+
+    blockquote:before {
+        content: "“";
+        font-size: 3rem;
+        color: #4CAF50;
+        position: absolute;
+        top: -20px;
+        left: 15px;
+    }
+
+    blockquote:after {
+        content: "”";
+        font-size: 3rem;
+        color: #4CAF50;
+        position: absolute;
+        bottom: -20px;
+        right: 15px;
+    }
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+            .sidebar {
+                margin-bottom: 20px;
+                position: static; /* Sidebar not fixed on smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <ul class="menu">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../ressources.html">Resources</a></li>
+                <li><a href="../../projects.html" class="active">Projects</a></li>
+                <li><a href="../../publications.html">Publications</a></li>
+                <li><a href="../../cv.html">CV</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="content">
+        <aside class="sidebar">
+            <h3>Sommaire</h3>
+            <ul>
+                <li><a href="1_0_les_structures_corticales.html">1. Les structures corticales : du concept à la mesure</a></li>
+                    <ul>
+                        <li><a href="1_1_sulci_gyri.html">1.1 Les sulci et les gyri</a></li>
+                        <li><a href="1_2_regions_sulcales_gyrales.html">1.2 Les régions sulcales et les régions gyrales</a></li>
+                    </ul>
+                <li><a href="2_0_detection_structures_corticales.html">2. Synthèse et limites des méthodes existantes pour détecter les structures corticales</a>
+                    <ul>
+                        <li><a href="2_1_detection_regions_gyrales_sulcales">2.1. Détection des régions sulcales et gyrales</a></li>
+                        <li><a href="2_2_detections_lignes_gyrales_sulcales.html">2.2. Détection des lignes sulcales et gyrales</a></li>
+                    </ul>
+                </li>
+                <li><a href="3_0_forme_prototypique_sillon.html">3. Forme prototypique d'un sillon</a>
+                    <ul>
+                        <li><a href="3_1_enjeu_forme.html">3.1. Enjeux de la forme prototypique des sillons</a></li>
+                        <li><a href="3_2_forme_litterature.html">3.2. Formes prototypiques énoncées dans la littérature</a></li>
+                        <li><a href="3_3_litterature_connexe.html">3.2. littérature connexe</a></li>
+                        <li><a href="3_4_proposition_forme.html">3.3. Propositions de formes de sillons prototypique</a></li>
+                        <li><a href="3_5_classification_forme.html">3.4. Classification empirique des formes de sillons</a></li>
+                    </ul>
+                </li>            
+            </ul>
+        </aside>
+        <main class="container">
+            <h1>Les structures corticales : du concept à la mesure</h1>
+            <div class="content">
+                <section class="section">
+                    <h2>Les Régions Sulcales et les Régions Gyrales</h2>
+                    <div class="definition-box">
+                        <h4>Définitions</h4>
+                        <ul>
+                            <li><strong>Régions gyrales:</strong> Désigne les régions convexes et externes de la surface corticale. Ce terme est plus spécifique à la morphométrie cérébrale.</li>
+                            <li><strong>Régions sulcales:</strong> Désigne les régions concaves et internes de la surface corticale. Ce terme est également plus spécifique à la morphométrie cérébrale.</li>
+                            <li><strong>Fond de sillon (ou fundi):</strong> Régions sulcales restreintes aux points internes de la surface.</li>
+                            <li><strong>Ligne sulcale:</strong> Représentation des fonds de sillons à l'aide d'une ligne, positionnée à distance égale entre les parois sulcales.</li>
+                            <li><strong>Couronne gyrale:</strong> Régions gyrales restreintes aux points externes de la surface, qui ne semblent pas avoir été soumises à un affaissement.</li>
+                            <li><strong>Bord gyral:</strong> Zone d'inflexion entre les couronnes gyrales et les parois sulcales.</li>
+                            <li><strong>Lignes / Crêtes gyrales:</strong> Représentation des couronnes gyrales en ligne. Les crêtes sont habituellement décrites comme les lignes de plus haute courbure des couronnes gyrales. Le terme ligne se veut moins sélectif sur la courbure et désigne davantage le pourtour externe d'un sillon.</li>
+                        </ul>
+                    </div>
+                    <p>
+                        Les <strong>régions gyrales</strong> sont associées aux parties convexes et externes, tandis que les <strong>régions sulcales</strong> sont associées aux parties concaves et internes.
+                        Selon cette représentation, la surface est composée de régions gyrales et de régions sulcales, à l'inverse de la première vision exposée précédemment (section <a href="#Les sulci et les gyri">Les sulci et les gyri</a>) où la surface n'était composée que de gyri. 
+                        Certains auteurs considèrent que la première approche est plus fidèle à la réalité anatomique des sulci et des gyri, tandis que la seconde propose une représentation géométrique et pratique des gyri et sulci en parcellisant la surface en régions gyrales et sulcales.
+                    </p>
+                    <p>
+                        Toutefois, la parcellisation de la surface corticale en régions sulcales et gyrales distinctes s'appuie sur plusieurs observations.
+                    </p>
+                    <p>
+                        Premièrement, dans un cerveau mature, le cortex est plus fin dans les régions gyrales que dans les régions sulcales. 
+                        Les articles <cite>Demirci & Holland, 2022</cite> et <cite>Lin, 2021</cite> mettent en évidence une variation de l'épaisseur corticale, du plus épais au plus fin, suivant un gradient sulco-gyral.
+                    </p>
+                    <p>
+                        Deuxièmement, l'organisation neuronale diffère entre les régions sulcales et les régions gyrales.
+                        Dans les régions gyrales, l'organisation neuronale est plus précise : la densité des cellules est plus faible, les fibres myélinisées sont plus denses et orientées plus verticalement, et les neurones pyramidaux montrent une configuration davantage orientée verticalement, avec des dendrites plus longues et plus élaborées que dans les régions sulcales (comme introduit dans <cite>Llinares-Benadero & Borrell, 2019</cite> et résumé dans la revue de littérature <cite>de Vareilles et al., 2023</cite>).
+                    </p>
+                    <p>
+                        Enfin, cette vision repose également sur les observations faites lors de la sulcogénèse.
+                        En effet, il est possible de localiser, sur la surface des fœtus, l'emplacement des futures régions gyrales et sulcales, comme illustré dans la figure ci-dessous.
+                    </p>
+                    <div class="image">
+                        <img src="figures/2_processus_cellulaire_OSVZ.png" alt="Processus cellulaire dans la zone subventriculaire">
+                        <p class="caption"><strong>Figure 1:</strong> Processus des cellules gliales radiales (bRG) dans la zone subventriculaire (OSVZ). Images issues de <cite>Long & Huttner, 2020</cite>.</p>
+                    </div>
+                    <p>
+                        La question de la frontière entre région sulcale et région gyrale est une question ouverte. 
+                        Pour pallier ce problème, une stratégie de parcellisation consiste à définir des régions gyrales et sulcales plus sélectives, c'est-à-dire restreintes à des régions avec moins d'ambiguïté.
+                    </p>
+                    <p>
+                        Nous emploierons dès lors le terme <strong>couronnes gyrales</strong> pour désigner les régions gyrales restreintes aux points extérieurs de la surface, qui ne semblent pas avoir été soumises à un affaissement. 
+                        De même, nous utiliserons le terme <strong>fonds de sillons</strong> (ou fundi) pour désigner les régions sulcales restreintes aux points les plus internes du sillon.
+                    </p>
+                    <div class="image">
+                        <img src="figures/2_différentes_morphologies_couronnes_gyrales.png" alt="Différentes morphologies des couronnes gyrales">
+                        <p class="caption"><strong>Figure 2:</strong> Différentes morphologies des couronnes gyrales. <cite>Lin et al., 2023</cite>.</p>
+                    </div>
+                    <p>
+                        On peut également définir des régions encore plus sélectives en se limitant à des lignes plutôt qu'à des régions : respectivement les <strong>lignes gyrales</strong> (ou crêtes gyrales) et les <strong>lignes sulcales</strong>.
+                    </p>
+                    <p>
+                        Enfin, nous pouvons également évoquer les <strong>bords des couronnes gyrales</strong> comme sous-structures des couronnes gyrales.
+                        Cette région est, à notre connaissance, uniquement définie dans les études propres aux stimulations magnétiques transcrâniennes (TMS) pour lesquelles parcelliser la surface selon son inclinaison est crucial pour estimer le biais de mesure introduit par un courant à direction unique (<cite>Siebner et al., 2022</cite>).
+                    </p>
+                </section>
+            </div>
+            
+            
+            
+        </main>
+    </div>
+</body>
+</html>
