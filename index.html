@@ -37,17 +37,22 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.6); /* Add a dark overlay for text readability */
+            background: rgba(36, 36, 36, 0.6); /* Add a dark overlay for text readability */
             z-index: 1;
         }
-        .hero h1, .hero p, .hero .button {
+        .hero h1, .hero h2, .hero p, .hero .button {
             position: relative;
             z-index: 2; /* Ensure content is above the overlay */
         }
 
         .hero h1 {
-            font-size: 4rem;
+            font-size: 5rem;
             margin-bottom: 1em;
+        }
+
+        .hero h2 {
+            font-size: 3.5rem;
+            color: #e94560;
         }
         .hero p {
             font-size: 1.5rem;
@@ -129,88 +134,43 @@
             transform: scale(1.05);
             background: #ff6b81;
         }
-        /* Ressources Section Styling */
-        .ressources-section {
-            text-align: center;
-            padding: 4em 2em;
-            background: linear-gradient(to bottom, #0f3460, #1a1a2e);
-            color: #fff;
-        }
-
-        .ressources-section h1 {
-            font-size: 3rem;
-            margin-bottom: 1em;
-            color: #e94560;
-        }
-
-        .ressources-section p {
-            font-size: 1.2rem;
-            margin-bottom: 3em;
-            line-height: 1.8;
-        }
-
-        .ressources-content {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .ressources-item {
-            text-decoration: none;
-            background: #16213e;
-            border-radius: 15px;
-            padding: 2em;
-            max-width: 400px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s, box-shadow 0.3s;
-            text-align: center;
-            color: #fff;
-        }
-
-        .ressources-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-        }
-
-        .ressources-item .icon {
-            font-size: 4rem;
-            color: #e94560;
-            margin-bottom: 1em;
-            transition: transform 0.3s, color 0.3s;
-        }
-
-        .ressources-item:hover .icon {
-            transform: scale(1.2) rotate(20deg);
-            color: #ff6b81;
-        }
-
-        .ressources-item h2 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5em;
-            color: #e94560;
-        }
-
-        .ressources-item p {
-            font-size: 1rem;
-            color: #d4d4d4;
-            line-height: 1.6;
-        }
+        
 
         /* Projects Section Styling */
         .projects-section {
             text-align: center;
             padding: 4em 2em;
-            background: linear-gradient(to bottom, #0f3460, #1a1a2e);
+            background: linear-gradient(to bottom, #1a1a2e, #16213e);
         }
+
         .projects-section h1 {
             font-size: 3rem;
             margin-bottom: 1em;
-            color: #e94560;
+            color: #fff;;
         }
         .projects-section p {
             font-size: 1.2rem;
             margin-bottom: 3em;
         }
+
+        /* Ressources Section Styling */
+        .ressources {
+            text-align: center;
+            padding: 4em 2em;
+            background: url('images/blur-abstract-wa.jpg') no-repeat center center;
+            background-size: cover;
+        }
+        .ressources h1 {
+            font-size: 3rem;
+            margin-bottom: 1em;
+            color: #16213e;
+        }
+        .ressources p {
+            font-size: 1.2rem;
+            margin-bottom: 3em;
+        }
+
+        /* Gallery Styling */
         .gallery-container {
             display: flex;
             justify-content: center;
@@ -218,8 +178,9 @@
             gap: 20px;
         }
         .gallery-item {
-            flex: 1 1 calc(30% - 20px);
-            max-width: calc(30% - 20px);
+            position: relative;
+            flex: 1 1 calc(20% - 20px);
+            max-width: calc(20% - 20px);
             background: #16213e;
             border-radius: 15px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -232,6 +193,7 @@
         }
         .gallery-item img {
             width: 100%;
+            height: 40%;
             border-bottom: 3px solid #e94560;
         }
         .gallery-item h2 {
@@ -246,8 +208,14 @@
             line-height: 1.6;
         }
         .gallery-item .button {
-            margin: 1em auto 2em;
-            padding: 0.8em 1.5em;
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0; /* Assure que le bouton est parfaitement centré */
+            margin: auto; /* Centrage horizontal automatique */
+            width: 80%; /* Largeur augmentée */
+            padding: 1.2em 1.5em;
+            width: 80%;
             background: #e94560;
             color: #fff;
             font-size: 1rem;
@@ -294,9 +262,69 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <h1>Explore Neuro-Imaging</h1>
-        <p>What about the shape of your brain?</p>
-        <a href="#profile" class="button">Get Started</a>
+        <h1>Explore l'imagerie cérébrale</h1>
+    </section>
+
+    <!-- Ressources Section -->
+    <section id="ressources" class="ressources">
+        <h1>Ressources pédagogiques</h1>
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="images/illu_cours1.png" alt="La neuro-imagerie">
+                <h2>La Neuro-Imagerie</h2>
+                <p>Quels sont les bases et les enjeux de l'imagerie cérébrale ? </p>
+                <a href="lessons/intro_imagerie/1_enjeux.html" class="button">Explorer ! </a>
+            </div>
+            <div class="gallery-item">
+                <img src="images/illu_cours2.png" alt="Les structures corticales">
+                <h2>Les structures corticales</h2>
+                <p>Comment définir et détecter les différentes structures corticales qui composent le cortex ?</p>
+                <a href="lessons/structures_corticales/1_0_les_structures_corticales.html" class="button">Découvrir !</a>
+            </div>
+            <div class="gallery-item">
+                <img src="images/illu_cours3.png" alt="La profondeur sulcale">
+                <h2>La profondeur suclale</h2>
+                <p>Introduction à la profondeur sulcale</p>
+                <a href="lessons/structures_corticales/1_1_sulci_gyri.html" class="button">Learn More</a>
+            </div>
+            <div class="gallery-item">
+                <img src="images/illu_cours3.png" alt="La profondeur sulcale">
+                <h2>Toutes les ressources</h2>
+                <p>Décourvre la liste complète des ressources pédagogiques.</p>
+                <a href="ressources.html" class="button">Voir</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="sprojets" class="projects-section">
+        <h1>Projets</h1>
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="images/illu_cours1.png" alt="Cadre d'étude pour estimer la profondeur sulcale">
+                <h2>Cadre d'étude pour estimer la profondeur sulcale</h2>
+                <p>Quels sont les bases et les enjeux de l'imagerie cérébrale ? </p>
+                <a href="lessons/intro_imagerie/1_enjeux.html" class="button">Explorer ! </a>
+            </div>
+            <div class="gallery-item">
+                <img src="images/illu_cours2.png" alt="Nouvelle méthode d'estimation de profondeur sulcale">
+                <h2>Nouvelle méthode pour estimer la profondeur sulcale</h2>
+                <p>Comment définir et détecter les différentes structures corticales qui composent le cortex ?</p>
+                <a href="lessons/structures_corticales/1_0_les_structures_corticales.html" class="button">Découvrir !</a>
+            </div>
+            <div class="gallery-item">
+                <img src="images/illu_cours3.png" alt="La profondeur sulcale">
+                <h2>Application plotly Mesh Visualizer</h2>
+                <p>Introduction à la profondeur sulcale</p>
+                <a href="lessons/structures_corticales/1_1_sulci_gyri.html" class="button">Learn More</a>
+            </div>
+            <div class="gallery-item">
+                <img src="images/illu_cours3.png" alt="La profondeur sulcale">
+                <h2>Toutes les projets</h2>
+                <p>Décourvre la liste complète des ressources pédagogiques.</p>
+                <a href="projets.html" class="button">Voir</a>
+            </div>
+        </div>
     </section>
 
     <!-- Mesh and Profile Section -->
@@ -331,49 +359,7 @@
         </section>
     </div>
 
-    <!-- Learn Neuro-Imaging Section -->
-    <section id="ressources" class="ressources-section">
-        <h1>Learn Neuro-Imaging</h1>
-        <p>Start learning Neuro-Imaging with comprehensive resources and guides:</p>
-        <div class="ressources-content">
-            <a href="ressources.html" class="ressources-item">
-                <div class="icon">
-                    <i class="fas fa-book"></i>
-                </div>
-                <h2>Explore Resources</h2>
-                <p>Access a curated library of tutorials, articles, and datasets to help you master neuro-imaging.</p>
-            </a>
-        </div>
-    </section>
-
-
-
     
-    <!-- Projects Section -->
-    <section id="projects" class="projects-section">
-        <h1>Projects</h1>
-        <p>Explore the various research projects I have been working on:</p>
-        <div class="gallery-container">
-            <div class="gallery-item">
-                <img src="images/project_01/image_DPF.png" alt="Sulcal Depth Estimation">
-                <h2>Sulcal Depth Estimation</h2>
-                <p>New sulcal depth estimation method using advanced algorithms.</p>
-                <a href="project_01.html" class="button">Learn More</a>
-            </div>
-            <div class="gallery-item">
-                <img src="images/project_01/image_lines.png" alt="Cortex Manual Labelisation">
-                <h2>Cortex Manual Labelisation</h2>
-                <p>Comprehensive dataset to evaluate sulcal depth methods.</p>
-                <a href="project_02.html" class="button">Learn More</a>
-            </div>
-            <div class="gallery-item">
-                <img src="images/project_01/image_metrics.png" alt="Quantitative Metrics">
-                <h2>Quantitative Metrics</h2>
-                <p>Introducing three new metrics to evaluate sulcal depth accuracy.</p>
-                <a href="project_03.html" class="button">Learn More</a>
-            </div>
-        </div>
-    </section>
 
     <!-- Footer Section -->
     <footer class="footer">

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Exploration complète de la morphométrie cérébrale : enjeux, spécificités du cortex, sulcogenèse, morphogenèse et organisation topologique.">
+    <title>Morphométrie Cérébrale</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            background: #f4f7fc;
+            color: #333;
+        }
+        header {
+            background: #2a4d69;
+            color: #fff;
+            padding: 15px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        header .nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        header .nav ul li {
+            margin: 0 15px;
+        }
+        header .nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+        header .nav ul li a.active {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+        .content {
+            display: flex;
+            margin: 80px 20px 20px; /* Add space for fixed navbar */
+            gap: 20px;
+        }
+        .sidebar {
+            flex: 1 1 300px;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            position: sticky;
+            top: 80px; /* Space for navbar */
+            height: fit-content;
+        }
+        .sidebar h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin: 10px 0;
+        }
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #2a4d69;
+            font-size: 1rem;
+        }
+        .sidebar ul li a:hover {
+            color: #4682bf;
+        }
+        .container {
+            flex: 3 1 600px;
+            max-width: 100%;
+        }
+        h1, h2, h3, h4 {
+            color: #2a4d69;
+        }
+        h1 {
+            font-size: 2rem;
+            text-align: center;
+            margin: 30px 0;
+        }
+        p {
+            margin: 15px 0;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+        .section {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .definition-box {
+            background: #f0f4f8;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .definition-box h4 {
+            margin: 0 0 10px;
+        }
+        .image, .figure {
+            text-align: center;
+            margin: 15px 0;
+        }
+        .image img, .figure img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        .image .caption, .figure .caption {
+            font-size: 0.9rem;
+            color: #555;
+        }
+        blockquote {
+        margin: 20px 0;
+        padding: 20px 30px;
+        background: linear-gradient(135deg, #f5f7fa, #e3e6f0);
+        border-left: 6px solid #4CAF50;
+        font-size: 1.2rem;
+        font-style: italic;
+        color: #333;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        position: relative;
+    }
+
+    blockquote:before {
+        content: "“";
+        font-size: 3rem;
+        color: #4CAF50;
+        position: absolute;
+        top: -20px;
+        left: 15px;
+    }
+
+    blockquote:after {
+        content: "”";
+        font-size: 3rem;
+        color: #4CAF50;
+        position: absolute;
+        bottom: -20px;
+        right: 15px;
+    }
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+            .sidebar {
+                margin-bottom: 20px;
+                position: static; /* Sidebar not fixed on smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <ul class="menu">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../ressources.html">Resources</a></li>
+                <li><a href="../../projects.html" class="active">Projects</a></li>
+                <li><a href="../../publications.html">Publications</a></li>
+                <li><a href="../../cv.html">CV</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="content">
+        <aside class="sidebar">
+            <h3>Sommaire</h3>
+            <ul>
+                <li><a href="1_enjeux.html">1. Enjeux de la morphométrie cérébrale</a></li>
+                <li><a href="2_specificites.html">2. Les spécificités de la forme du cortex</a>
+                    <ul>
+                        <li><a href="2_1_couches.html">2.1. Les différentes couches : matière grise et blanche</a></li>
+                        <li><a href="2_2_sulcogenese.html">2.2. La sulcogenèse</a></li>
+                        <li><a href="2_3_morphogenese.html">2.3. La morphogenèse : dépendance à l’âge</a></li>
+                        <li><a href="2_4_topologie.html">2.4. Organisation et variabilité topologique</a></li>
+                    </ul>
+                </li>
+                <li><a href="3_numerique.html">3. Représentation numérique de la surface corticale</a></li>
+            </ul>
+        </aside>
+        <main class="container">
+            <h1>Introduction</h1>
+            <section class="section">
+               
+                <h1>Introduction</h1>
+        
+                <h2>La profondeur sulcale comme descripteur de la forme du cortex</h2>
+                <p>La morphologie du cortex cérébral se caractérise par un réseau complexe de circonvolutions et de sillons. Parmi les descripteurs morphométriques, la profondeur sulcale se distingue comme un paramètre clé pour l'étude de la surface corticale. Elle s'avère particulièrement utile pour analyser le développement spatio-temporel des plis corticaux, tant chez les fœtus et les nouveau-nés (<cite>Yun, 2013</cite>), qu'entre la naissance et l'âge adulte (<cite>Hill, 2010</cite>), ainsi que chez d'autres espèces gyrencéphaliques (<cite>Knutsen, 2013</cite>).</p>
+                <p>Des recherches récentes ont montré que la mesure de la profondeur sulcale peut offrir des indications pronostiques sur le développement cognitif ultérieur (<cite>Bartha Taymourtash, 2023</cite>) et constitue un outil précieux pour détecter les malformations neurologiques développementales (<cite>Brun Deruelle, 2016</cite>).</p>
+                <p>Cependant, parmi les descripteurs macrostructurels tels que l'indice de gyrification, la taille, la courbure et l'épaisseur corticale, la profondeur sulcale reste mal définie. Cette imprécision découle en grande partie de la diversité des méthodes utilisées, chacune basée sur une vision différente de la surface corticale, sans cadre formel pour comparer et évaluer ces méthodes autrement que par des critères purement applicatifs ou méthodologiques.</p>
+                
+                <h2>Absence de vérité terrain</h2>
+                <p>L'absence de vérité terrain dans la définition de la profondeur sulcale est liée à la complexité de la parcellisation des structures corticales, une problématique encore ouverte. En neuro-imagerie, la forme des sillons et des circonvolutions est souvent représentée par un schéma bidimensionnel simplifié, où les parties convexes correspondent aux gyri et les parties concaves aux sulci.</p>
+                <p>Bien que cette représentation intuitive soit utile pour élaborer des descripteurs macrostructurels comme la profondeur sulcale (<cite>Lohmann, 1998</cite>, <cite>Goualher, 2011</cite>), elle ne capture pas la totalité des structures corticales, particulièrement durant les périodes critiques de formation des plis.</p>
+                
+                <h2>Synthèse et limites des méthodes existantes</h2>
+                <p>Les approches pour estimer la profondeur sulcale se divisent principalement en trois catégories :</p>
+                <ul>
+                    <li>Les méthodes basées sur la distance à une enveloppe fermée (<cite>Mangin, 2004</cite>).</li>
+                    <li>Les méthodes basées sur la déformation de la surface vers une surface lisse (<cite>Fischl, 1999</cite>).</li>
+                    <li>Les méthodes utilisant un moyennage local de la courbure (<cite>Boucher, 2009</cite>).</li>
+                </ul>
+                <p>La méthode DPF, par exemple, définit la profondeur sulcale comme la solution d'une équation de Poisson régularisée :</p>
+                <p>
+                    <code>
+                    (-Δ<sub>M</sub> + αI)D = 2K
+                    </code>
+                </p>
+                <p>Avec Δ<sub>M</sub> l'opérateur Laplace-Beltrami sur la surface M, I l'opérateur identité, K la courbure moyenne de M et α le paramètre de régularisation.</p>
+                
+                <h2>Évaluer la pertinence et la cohérence des méthodes</h2>
+                <p>Pour surmonter les limites conceptuelles et méthodologiques actuelles, il est essentiel d'assurer la pertinence et la cohérence des méthodes de mesure de la profondeur sulcale. La pertinence se mesure en vérifiant si les résultats obtenus respectent un ensemble de propriétés souhaitables définies pour la profondeur sulcale.</p>
+                <p>La cohérence d'une méthode est garantie lorsque, indépendamment de la taille et de la représentation des structures corticales, l'estimation de la profondeur sulcale reste pertinente et non biaisée par des facteurs comme l'âge ou la taille.</p>
+                
+                <h2>Nouvelle méthode d'estimation de la profondeur sulcale</h2>
+                <p>Nous avons repris la méthode DPF et l'avons soumise à notre cadre d'étude, en respectant les critères de pertinence et de cohérence. Nous introduirons d'abord cette méthode, démontrant qu'elle satisfait le critère d'invariance par homothétie.</p>
+                <p>Ensuite, nous la paramétrerons afin qu'elle réponde aux critères de pertinence, en utilisant une base de données annotée manuellement. Nous décrirons notre protocole de labellisation et montrerons comment notre méthode offre une description plus fine de la surface corticale et de l'évolution de sa forme en fonction de l'âge.</p>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
