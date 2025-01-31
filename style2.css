@@ -1,0 +1,206 @@
+
+        /* Hero Section Styling */
+        .hero {
+            text-align: center;
+            padding: 5em 2em;
+            background: url('images/neuroscientists.jpg') no-repeat center center;
+            background-size: cover;
+            color: #fff;
+            position: relative;
+            }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(36, 36, 36, 0.6); /* Add a dark overlay for text readability */
+            z-index: 1;
+        }
+        .hero h1, .hero h2, .hero p, .hero .button {
+            position: relative;
+            z-index: 2; /* Ensure content is above the overlay */
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            margin-bottom: 1em;
+        }
+
+        .hero h2 {
+            font-size: 3.5rem;
+            color: #e94560;
+        }
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2em;
+        }
+        .hero .button {
+            padding: 1em 2em;
+            font-size: 1.2rem;
+            background: #e94560;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(233, 69, 96, 0.5);
+            transition: transform 0.3s, background 0.3s;
+        }
+        .hero .button:hover {
+            transform: scale(1.1);
+            background: #ff6b81;
+        }
+
+
+        /* Projects Section Styling */
+        .projects-section {
+            text-align: center;
+            padding: 4em 2em;
+            background: linear-gradient(to bottom, #1a1a2e, #16213e);
+        }
+
+        .projects-section h1 {
+            font-size: 3rem;
+            margin-bottom: 1em;
+            color: #fff;;
+        }
+        .projects-section p {
+            font-size: 1.2rem;
+            margin-bottom: 3em;
+        }
+
+        /* Ressources Section Styling */
+        .ressources {
+            text-align: center;
+            padding: 4em 2em;
+            background: url('images/blur-abstract-wa.jpg') no-repeat center center;
+            background-size: cover;
+        }
+        .ressources h1 {
+            font-size: 3rem;
+            margin-bottom: 1em;
+            color: #16213e;
+        }
+        .ressources p {
+            font-size: 1.2rem;
+            margin-bottom: 3em;
+        }
+
+        /* Gallery Styling */
+        .gallery-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .gallery-item {
+            position: relative;
+            flex: 1 1 calc(20% - 20px);
+            max-width: calc(20% - 20px);
+            background: #16213e;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 40%;
+            border-bottom: 3px solid #e94560;
+        }
+        .gallery-item h2 {
+            font-size: 1.5rem;
+            margin: 1em 0;
+            color: #e94560;
+        }
+        .gallery-item p {
+            font-size: 1rem;
+            margin: 0 1em 1.5em;
+            color: #d4d4d4;
+            line-height: 1.6;
+        }
+        .gallery-item .button {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0; /* Assure que le bouton est parfaitement centré */
+            margin: auto; /* Centrage horizontal automatique */
+            width: 80%; /* Largeur augmentée */
+            padding: 1.2em 1.5em;
+            width: 80%;
+            background: #e94560;
+            color: #fff;
+            font-size: 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(233, 69, 96, 0.5);
+            transition: transform 0.3s, background 0.3s;
+        }
+        .gallery-item .button:hover {
+            background: #ff6b81;
+            transform: scale(1.05);
+        }
+
+        /* Boutons spéciaux pour les projets */
+.button-doc,
+.button-github {
+    position: absolute;
+    bottom: 15px;
+    width: auto;
+    height: 50px;
+    border-radius: 25px;
+    background-color: #e94560;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 15px rgba(233, 69, 96, 0.5);
+    transition: transform 0.3s, background 0.3s;
+    text-decoration: none;
+    padding: 0 15px;
+    gap: 10px; /* Espace entre l'icône et le texte */
+    white-space: nowrap;
+}
+
+/* Bouton GitHub (bas gauche) */
+.button-github {
+    left: 10%;
+}
+
+/* Bouton Doc (bas centre) */
+.button-doc {
+    left: 50%;
+}
+
+/* Effet au survol */
+.button-doc:hover,
+.button-github:hover {
+    background: #ff6b81;
+    transform: scale(1.1);
+}
+
+/* Icônes des boutons */
+.button-doc i,
+.button-github i {
+    font-size: 1.5rem;
+}
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .profile-mesh-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .mesh-section, .profile-section {
+                width: 100%;
+                max-width: 500px;
+            }
+            .gallery-item {
+                flex: 1 1 100%;
+            }
+        }
